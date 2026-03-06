@@ -1,5 +1,8 @@
 let verticalSwiper = null;
-let currentHorizontalSwiper = null;
+let wheelAccumulator = 0;
+const wheelThreshold = 150;
+let isSwiping = false;
+const cooldownTime = 650;
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.swiper-v').forEach((swiperEl) => {
@@ -7,17 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       direction: 'vertical',
       loop: false,
       speed: 1500,
-      effect: 'creative',
-      creativeEffect: {
-        prev: {
-          shadow: true,
-          translate: [0, 0, -400],
-        },
-        next: {
-          shadow: true,
-          translate: [0, "100%", 0],
-        },
-      },
+      effect: 'slide',
       autoplay: false,
       simulateTouch: false,
       keyboard: false,
@@ -141,39 +134,65 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleWheel(e) {
-  if (!verticalSwiper) return;
-
-  const currentSlide = verticalSwiper.slides[verticalSwiper.activeIndex];
-  const horizontalSwiper = currentSlide?.querySelector('.swiper-h')?.swiper;
-
-  const deltaY = e.deltaY;
+  if (!verticalSwiper || isSwiping) return;
 
   e.preventDefault();
 
-  if (horizontalSwiper) {
-    const isHSwipperAtStart = horizontalSwiper.activeIndex === 0;
-    const isHSwipperAtEnd = horizontalSwiper.activeIndex === horizontalSwiper.slides.length - 1;
+  const deltaY = e.deltaY;
+  wheelAccumulator += deltaY;
 
-    if (deltaY > 0) {
-      if (isHSwipperAtEnd) {
+  if (Math.abs(wheelAccumulator) >= wheelThreshold) {
+    const direction = wheelAccumulator > 0 ? 'next' : 'prev';
+    performSwipe(direction);
+    
+    wheelAccumulator = 0;
+  }
+}
+
+
+function performSwipe(direction) {
+  const currentSlide = verticalSwiper.slides[verticalSwiper.activeIndex];
+  const horizontalSwiper = currentSlide?.querySelector('.swiper-h')?.swiper;
+
+  isSwiping = true; // 鎖定
+
+  if (horizontalSwiper) {
+    const isAtStart = horizontalSwiper.isBeginning;
+    const isAtEnd = horizontalSwiper.isEnd;
+
+    if (direction === 'next') {
+      if (isAtEnd) {
         verticalSwiper.slideNext();
       } else {
         horizontalSwiper.slideNext();
       }
     } else {
-      if (isHSwipperAtStart) {
+      if (isAtStart) {
         verticalSwiper.slidePrev();
       } else {
         horizontalSwiper.slidePrev();
       }
     }
   } else {
-    if (deltaY > 0) {
+    if (direction === 'next') {
       verticalSwiper.slideNext();
     } else {
       verticalSwiper.slidePrev();
     }
   }
+
+  setTimeout(() => {
+    isSwiping = false;
+    wheelAccumulator = 0;
+  }, cooldownTime);
 }
 
-
+let wheelTimer = null;
+document.addEventListener('wheel', (e) => {
+  handleWheel(e);
+  
+  clearTimeout(wheelTimer);
+  wheelTimer = setTimeout(() => {
+    if (!isSwiping) wheelAccumulator = 0;
+  }, 150);
+}, { passive: false });
