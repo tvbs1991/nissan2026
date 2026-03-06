@@ -1,9 +1,8 @@
-@import"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap";
-@font-face{font-family:"Nissan Brand Bold";src:url("../font/Nissan Brand Bold.otf");}
-@font-face{font-family:"Nissan Brand Italic";src:url("../font/Nissan Brand Italic.otf");}
-@font-face{font-family:"Nissan Brand Light";src:url("../font/Nissan Brand Light.otf");}
-@font-face{font-family:"Nissan Brand Regular";src:url("../font/Nissan Brand Regular.otf");}
-
+@import"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&display=swap";
+@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Regular.otf");}
+/* @font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Italic.otf");}
+@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Light.otf");}
+@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Bold.otf");} */
 
 /* ==========================================================================
    全域重置與基礎設定
@@ -19,7 +18,11 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family:"Nissan Brand Regular", "Nissan Brand Italic", "Nissan Brand Light", "Nissan Brand Bold", "Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;max-width:1920px;min-width:320px;overflow-x:hidden;margin:0 auto;
+  font-family:"Nissan Brand","Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  max-width:1920px;
+  min-width:320px;
+  overflow-x:hidden;
+  margin:0 auto;
   background-color: #fff;
 }
 
@@ -109,7 +112,6 @@ header .nav-bar .logo{
 header .nav-bar .logo,
 header .nav-bar a {
   cursor: pointer;
-  font-family: "Noto Sans TC", "Nissan Brand Regular", "Nissan Brand Italic", "Nissan Brand Light", "Nissan Brand Bold", "Microsoft JhengHei",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif
 }
 
 .nav-kicks-btn,
@@ -267,10 +269,9 @@ header .nav-bar a {
 }
 
 .KICKS .swiper-pagination{
-  width: 1080px;
   margin: auto;
   justify-content: end;
-  bottom: 180px;
+  bottom: calc((100vh - 420px) / 2 - 60px);
 }
 .KICKS .swiper-pagination-bullet-active {
   color: #fff;
@@ -281,10 +282,9 @@ header .nav-bar a {
 }
 
 .SENTRA .swiper-pagination{
-  width: 1080px;
   margin: auto;
-  justify-content: start;
-  bottom: 180px;
+  justify-content: end;
+  bottom: calc((100vh - 420px) / 2 - 60px);
 }
 .SENTRA .swiper-pagination-bullet-active {
   color: #fff;
@@ -345,24 +345,17 @@ header .nav-bar a {
   transform: scaleX(-1);
 }
 .banner-info .banner-box .banner-tag{
-  position: absolute;
-  color: #FFFFFF;
-  top: 80%;
-  left: 5%;
-  text-align: center;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
 }
 .banner-info .BANNER .swiper-slide:first-child .banner-tag{
   width: 167px;
+  height: auto;
 }
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag{
   width: 196px;
-}
-.banner-info .BANNER .banner-box .banner-title{
-    font-size: 45px;
-}
-.banner-info .BANNER .banner-box .banner-subtitle{
-    font-size: 16px;
-    font-family: "Nissan Brand Light", "Nissan Brand Regular", "Nissan Brand Italic", "Nissan Brand Bold", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  height: auto;
 }
 .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content{
     position: absolute;
@@ -533,19 +526,20 @@ header .nav-bar a {
 .tvc-info .tvc-info-column {
   width: 500px;
 }
-
-.tvc-info .tvc-info-column .d-flex-center * {
-  margin: 0 10px;
+.tvc-info .tvc-info-column .tvc-kicks-title{
+  width: 368px;
+  height: 30px;
+  margin: auto;
 }
-
-.tvc-info .object-img{
-  width: 32px;
-  height: 32px;
+.tvc-info .tvc-info-column .tvc-sentra-title{
+  width: 390px;
+  height: 30px;
+  margin: auto;
 }
 
 .tvc-info .tvc-kicks-img{
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
     border: 15px solid #F6E9EB;
     box-shadow: 0px 0px 25px 0px #0000001A;
     width: 500px;
@@ -559,16 +553,14 @@ header .nav-bar a {
 .tvc-info .tvc-kicks-img:hover{  
   box-shadow: 0px 0px 25px 0px #FFAFBB;
 }
-
 .tvc-info .tvc-kicks-img img{
   width: 100%;
   height: auto;
-
 }
 
 .tvc-info .tvc-sentra-img{  
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
     border: 15px solid #E9EEF6;
     box-shadow: 0px 0px 25px 0px #0000001A;
     width: 500px;
@@ -591,6 +583,7 @@ header .nav-bar a {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .tvc-info .play-box .play-btn{
     width: 60px;
@@ -763,22 +756,32 @@ header .nav-bar a {
 
 
 .car-slide-box{
-  width: 1200px;
-  height: 370px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  width: 100%;
+    height: 370px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-.car-slide-box .car-info-box{
-  width: 440px;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
+.KICKS .car-slide-box .car-info-box{
+    width: 440px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
 }
+.SENTRA .car-slide-box .car-info-box{
+    width: 440px;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
 .car-slide-box .car-info-box img{
   width: 235px;
   height: auto;
@@ -792,11 +795,12 @@ header .nav-bar a {
 
 .car-slide-box .car-info-box .car-feature-title{
   font-size: 36px;
-  padding: 5px 30px;
+  padding: 5px 30px;background: #FFFFFF;
   box-shadow: 0px 0px 25px 0px #0000000D;
   margin: 15px 0 10px 0;
-    letter-spacing: 10px;
-    color: #616161;
+  letter-spacing: 10px;
+  color: #616161;
+  font-family: "Noto Serif TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 .car-slide-box .car-info-box .car-feature-directions{
   font-size: 20px;
@@ -807,6 +811,7 @@ header .nav-bar a {
 
 .car-slide-box .car-img-box{
   width: 560px;
+  position: relative;
 }
 
 
@@ -1011,7 +1016,6 @@ header .nav-bar a {
   display: none;
 }
 
-/* 彈窗淡入動畫 - 從左下往右上 */
 @keyframes popupFadeIn {
   0% {
     opacity: 0;
@@ -1034,3 +1038,54 @@ header .nav-bar a {
     transform: translate(-100px, 100px) scale(0.8);
   }
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* 起始位置在下方 30px */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* 回到原位 */
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in { animation: fadeIn 1.7s ease-in forwards; }
+.fade-in-up { animation: fadeInUp 1.7s ease-in forwards; }
+.fade-in-down { animation: fadeInDown 1.7s ease-in forwards; }
+.fade-in-left { animation: fadeInLeft 1.7s ease-in forwards; }
+.fade-in-right { animation: fadeInRight 1.7s ease-in forwards; }

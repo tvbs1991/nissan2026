@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ? { el: swiperEl.querySelector('.swiper-pagination'), clickable: true, renderBullet: (index, className) => `<span class="${className} custom-bullet">${index + 1}</span>` }
       : { el: swiperEl.querySelector('.swiper-pagination'), clickable: true };
 
-    const swiper = new Swiper(swiperEl, {
+    const horizontalSwiper = new Swiper(swiperEl, {
       direction: 'horizontal',
       loop: false,
       speed: 1000,
@@ -40,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
       keyboard: false,
       mousewheel: false,
     });
+
+    // horizontalSwiper.on('slideChange', () => {
+    //   triggerFadeInElements();
+    // });
+
   });
 
   document.addEventListener('wheel', handleWheel, { passive: false });
@@ -56,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         goToTopBtn.classList.add('show');
         if (headerEl) headerEl.classList.add('hide');
       }
+
+      triggerFadeInElements();
     });
 
     goToTopBtn.addEventListener('click', () => {
@@ -63,51 +70,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const navSentraBtn = document.querySelector('.nav-sentra-btn');
-  const kicksNextBtn = document.querySelector('.kicks-next-btn');
-  if (kicksNextBtn) {
-    kicksNextBtn.addEventListener('click', (e) => {
+  const navKicksBtn = document.querySelectorAll('.nav-kicks-btn');
+  navKicksBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      verticalSwiper.slideTo(3);
+      verticalSwiper.slideTo(2);
     });
-  }
-  if (navSentraBtn) {
-    navSentraBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      verticalSwiper.slideTo(3);
-    });
-  }
+  });
 
-  const navKicksBtn = document.querySelector('.nav-kicks-btn');
-  const sentraPreviousBtn = document.querySelector('.sentra-previous-btn');
-  if (sentraPreviousBtn) {
-    sentraPreviousBtn.addEventListener('click', (e) => {
+  const navSentraBtn = document.querySelectorAll('.nav-sentra-btn');
+  navSentraBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      verticalSwiper.slideTo(2);
+      verticalSwiper.slideTo(3);
     });
-  }
-  if (navKicksBtn) {
-    navKicksBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      verticalSwiper.slideTo(2);
-    });
-  }
+  });
+
 
   const popupOverlay = document.getElementById('popupOverlay');
   const popupClose = document.getElementById('popupClose');
   const popupVideo = document.getElementById('popupVideo');
-  const tvcPlayButtons = document.querySelectorAll('.tvc-info .play-box .play-btn');
+  const tvcPlayButtons = document.querySelectorAll('.tvc-info .play-box, .banner-box .play-box');
 
   tvcPlayButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      
-      const videoUrl = btn.dataset.videoUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+      console.log(btn.dataset)
+      const videoUrl = btn.dataset.video_url || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
       
       popupVideo.src = videoUrl;
       popupOverlay.classList.add('show');
@@ -196,3 +188,18 @@ document.addEventListener('wheel', (e) => {
     if (!isSwiping) wheelAccumulator = 0;
   }, 150);
 }, { passive: false });
+
+function triggerFadeInElements() {
+  const currentSlide = verticalSwiper.slides[verticalSwiper.activeIndex];
+  if (!currentSlide) return;
+
+  const fadeInElements = currentSlide.querySelectorAll('.fade-in, .fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right');
+
+
+  fadeInElements.forEach((element) => {
+    element.style.animation = 'none';
+    setTimeout(() => {
+      element.style.animation = '';
+    }, 10);
+  });
+}
