@@ -35,7 +35,9 @@
 		<canvas id="sakura-canvas"></canvas>
 		<header>
 			<div class="nav-bar d-flex-between">
-				<img class="logo" src="./assets/img/icon/logo-b.png">
+				<a href="https://new.nissan.com.tw/nissan">
+					<img class="logo" src="./assets/img/icon/logo-b.png">
+				</a>
 				<div class="d-flex-around" style="width: 350px;">
 					<a class="nav-kicks-btn">KICKS 新発売</a>
 					<a class="nav-sentra-btn">SENTRA 新発売</a>
@@ -45,7 +47,7 @@
 		<div class="panel">
 			<a class="go-to-top-btn"></a>
 			<div class="swiper swiper-v">
-				<div class="swiper-wrapper">
+				<div class="swiper-wrapper swiper-wrapper-v">
 					<!-- Slide 1: Banner -->
 					<div class="swiper-slide">
 						<div class="banner-info">
@@ -65,7 +67,7 @@
 													<img class="banner-content-subtitle-img" src="./assets/img/banner/kicks_content_subtitle.svg">	
 												</div>
 												<a class="play-box d-flex-center fade-in" data-video_url="https://www.youtube.com/embed/CDxsLjS9raA?si=J1GGtBo8nF9ihPrx&autoplay=1&mute=1">
-													<span>觀看影片</span>
+													<span style="letter-spacing: 20%; margin-right: 3px;">觀看影片</span>
 													<div class="play-btn"></div>
 												</a>												
 											</div>
@@ -81,7 +83,7 @@
 													<img class="banner-content-subtitle-img" src="./assets/img/banner/sentra_content_subtitle.svg">	
 												</div>
 												<a class="play-box d-flex-center fade-in" data-video_url="https://www.youtube.com/embed/CDxsLjS9raA?si=J1GGtBo8nF9ihPrx&autoplay=1&mute=1">
-													<span>觀看影片</span>
+													<span style="letter-spacing: 20%; margin-right: 3px;">觀看影片</span>
 													<div class="play-btn"></div>
 												</a>												
 											</div>
@@ -122,9 +124,13 @@
 					<!-- Slide 3: KICKS -->
 					<div class="swiper-slide">
 						<div class="kicks-info">
-							<img class="deco01" src="./assets/img/kicks/deco01.png">
-							<img class="deco02" src="./assets/img/kicks/deco02.png">
-							<img class="deco05" src="./assets/img/kicks/deco05.png">
+							<div class="color-area01 fade-in-right"></div>
+							<div class="color-area02 fade-in-right"></div>
+							<div class="color-area03 fade-in-left"></div>
+							<div class="color-area04 fade-in-left"></div>
+							<img class="deco01 fade-in-left2" src="./assets/img/kicks/deco01.png">
+							<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
+							<img class="deco05 fade-in-right2" src="./assets/img/kicks/deco05.png">
 							<div class="swiper swiper-h KICKS w-100 h-100">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
@@ -149,7 +155,7 @@
 												<div class="car-feature-directions fade-in-up">
 													1. EPKB 電子駐煞車附 Auto Hold<br>
 													2. 3D Relax 超體感紓壓皮椅<br>
-													3. PM 2.5 級恆溫空調<br>
+													3. PM 2.5 級恆溫空調
 												</div>
 											</div>
 											<div class="car-img-box fade-in-right">
@@ -162,8 +168,12 @@
 											<div class="car-info-box">
 												<img class="fade-in-down" src="./assets/img/kicks/car.png">
 												<div class="kicks-font-color fade-in-up">KICKS</div>
-												<div class="car-feature-title fade-in-up"> 雙前座通風座椅 </div>
-												<div class="car-feature-directions fade-in-up">特色說明特色說明特色說明特色說明特色說明特色說特色說明特特色說明特明</div>
+												<div class="car-feature-title fade-in-up"> 時尚跨界外型 </div>
+												<div class="car-feature-directions fade-in-up">
+													1. 個性化雙色外觀<br>
+													2. 17 吋雙色切消式鋁圈<br>
+													3. 同級最小迴轉半徑 5.1m
+												</div>
 											</div>
 											<div class="car-img-box fade-in-right">
 												<img src="./assets/img/kicks/kicks05.jpg" alt="feature1">
@@ -171,7 +181,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="car-slide-box fade-in" style="height: 0;">
+								<div class="car-slide-box fade-in" style="position: absolute;height: auto; z-index: 1;">
 									<div class="car-info-box"></div>
 									<div class="car-img-box">
 										<div class="swiper-pagination" style="counter-reset: swiper-pagination-index;"></div>
@@ -187,9 +197,13 @@
 					<!-- Slide 4: SENTRA -->
 					<div class="swiper-slide">
 						<div class="sentra-info">
-							<img class="deco04" src="./assets/img/sentra/deco04.png">
-							<img class="deco02" src="./assets/img/kicks/deco02.png">
-							<img class="deco05" src="./assets/img/kicks/deco05.png">
+							<div class="color-area01 fade-in-right"></div>
+							<div class="color-area02 fade-in-right"></div>
+							<div class="color-area03 fade-in-left"></div>
+							<div class="color-area04 fade-in-left"></div>
+							<img class="deco04 fade-in-left" src="./assets/img/sentra/deco04.png">
+							<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
+							<img class="deco05 fade-in-down2" src="./assets/img/kicks/deco05.png">
 							<a class="sentra-previous-btn nav-kicks-btn">								
 								<span>KICKS</span>
 								<img src="./assets/img/kicks/arrow.png">
@@ -236,7 +250,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="car-slide-box fade-in" style="height: 0;">
+								<div class="car-slide-box fade-in" style="position: absolute;height: auto; z-index: 1;">
 									<div class="car-img-box">
 										<div class="swiper-pagination" style="counter-reset: swiper-pagination-index;"></div>
 									</div>
@@ -248,65 +262,98 @@
 					<!-- Slide 5: Price -->
 					<div class="swiper-slide">
 						<div class="price-info">
-							<div class="d-flex-evenly" style="height: 600px;">
+							<div class="item-colum d-flex-evenly">
 								<div>
 									<div class="price-box nav-kicks-btn" style="cursor: pointer;">
 										<img class="fade-in-down" src="./assets/img/kicks/car.png">
 										<div class="car-name fade-in-up">
 											KICKS
 										</div>
-										<table class="fade-in">
+										<table class="web-table fade-in">
 											<tr>
 												<td style="border-right: 1px solid #D0D0D0;">
 													<div class="d-flex-center">
 														<span class="f-bold">初綻版</span>
-														<span style="font-size: 10px;color: #89610A; margin-left: 3px; background: #F3E1B8;padding: 2px 4px;">限時優惠</span></div>
-													<div>69.9萬元</div>
+														<span class="special-offer">限時優惠</span></div>
+													<div style="font-size: 18px;">69.9萬元</div>
 												</td>
 												<td style="border-right: 1px solid #D0D0D0;">
 													<div class="f-bold">盛綻版</div>
-													<div>81.5萬元</div>
+													<div style="font-size: 18px;">81.5萬元</div>
 												</td>
 												<td>
 													<div class="f-bold">極綻版</div>
-													<div>85.5萬元</div>
+													<div style="font-size: 18px;">85.5萬元</div>
 												</td>
+											</tr>
+										</table>
+										<table class="mobile-table fade-in">
+											<tr>
+												<td>
+													<span class="f-bold">初綻版</span>
+													<span class="special-offer">限時優惠</span>												
+												</td>
+												<td>
+													69.9萬元
+												</td>
+											</tr>
+											<tr>
+												<td class="f-bold">盛綻版</td>
+												<td>81.5萬元</td>
+											</tr>
+											<tr>
+												<td class="f-bold">極綻版</td>
+												<td>85.5萬元</td>
 											</tr>
 										</table>
 									</div>
 									<div class="pdf-download-box d-flex-center">
-										<a href="" target="_blank" class="d-flex-center fade-in-left">
-											型錄下載
+										<a href="./assets/files/NISSAN KICKS｜2026型錄.pdf" target="_blank" class="d-flex-center fade-in-left">
+											<span style="letter-spacing: 5px;">型錄下載</span>
 											<img src="./assets/img/icon/kicks-download.png">
 										</a>
 									</div>
 								</div>
 								<div>
 									<div class="price-box nav-sentra-btn" style="cursor: pointer;">
-									<img class="fade-in-down" src="./assets/img/sentra/car.png">
-									<div class="car-name fade-in-up">
-										SENTRA
-									</div>
-									<table class="fade-in">
-										<tr>
-											<td style="border-right: 1px solid #D0D0D0;">
-												<div class="f-bold">初綻版</div>
-												<div>78.5萬元</div>
-											</td>
-											<td style="border-right: 1px solid #D0D0D0;">
-												<div class="f-bold">盛綻版</div>
-												<div>83.9萬元</div>
-											</td>
-											<td>
-												<div class="f-bold">極綻版</div>
-												<div>88.9萬元</div>
-											</td>
-										</tr>
-									</table>
+										<img class="fade-in-down" src="./assets/img/sentra/car.png">
+										<div class="car-name fade-in-up">
+											SENTRA
+										</div>
+										<table class="web-table fade-in">
+											<tr>
+												<td style="border-right: 1px solid #D0D0D0;">
+													<div class="f-bold">初綻版</div>
+													<div style="font-size: 18px;">78.5萬元</div>
+												</td>
+												<td style="border-right: 1px solid #D0D0D0;">
+													<div class="f-bold">盛綻版</div>
+													<div style="font-size: 18px;">83.9萬元</div>
+												</td>
+												<td>
+													<div class="f-bold">極綻版</div>
+													<div style="font-size: 18px;">88.9萬元</div>
+												</td>
+											</tr>
+										</table>
+										<table class="mobile-table fade-in">
+											<tr>
+												<td class="f-bold">初綻版</td>
+												<td>78.5萬元</td>
+											</tr>
+											<tr>
+												<td class="f-bold">盛綻版</td>
+												<td>83.9萬元</td>
+											</tr>
+											<tr>
+												<td class="f-bold">極綻版</td>
+												<td>88.9萬元</td>
+											</tr>
+										</table>
 									</div>
 									<div class="pdf-download-box d-flex-center">
-										<a href="" target="_blank" class="d-flex-center fade-in-right">
-											型錄下載
+										<a href="./assets/files/NISSAN SENTRA｜2026型錄.pdf" target="_blank" class="d-flex-center fade-in-right">
+											<span style="letter-spacing: 5px;">型錄下載</span>
 											<img src="./assets/img/icon/sentra-download.png">
 										</a>
 									</div>

@@ -12,6 +12,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  letter-spacing: 10%;
 }
 
 html, body {
@@ -19,11 +20,11 @@ html, body {
   height: 100%;
   overflow: hidden;
   font-family:"Nissan Brand","Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  max-width:1920px;
   min-width:320px;
   overflow-x:hidden;
   margin:0 auto;
   background-color: #fff;
+  line-height: 1.5;
 }
 
 body {
@@ -346,12 +347,12 @@ header .nav-bar a {
 }
 .banner-info .banner-box .banner-tag{
     position: absolute;
-    bottom: 10%;
-    left: 5%;
+    bottom: 50px;
+    left: 50px;
 }
 .banner-info .BANNER .swiper-slide:first-child .banner-tag{
-  width: 167px;
-  height: auto;
+    width: 15vw;
+    height: auto;
 }
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag{
   width: 196px;
@@ -360,8 +361,12 @@ header .nav-bar a {
 .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content{
     position: absolute;
     color: #FFFFFF;
-    top: 65%;
-    right: 10%;
+    transform: translateY(-50%);
+    top: 70%;
+    right: 0;
+    left: 60%;
+    margin: 0 auto;
+    width: 17vw;
     text-align: center;
 }
 .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content .banner-content-subtitle{
@@ -384,8 +389,12 @@ header .nav-bar a {
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
     position: absolute;
     color: #FFFFFF;
-    top: 65%;
-    left: 30%;
+    transform: translateY(-50%);
+    top: 70%;
+    right: 0;
+    left: -32%;
+    margin: 0 auto;
+    width: 17vw;
     text-align: center;
 }
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .banner-content-subtitle{
@@ -623,7 +632,40 @@ header .nav-bar a {
   position: relative;
 }
 .kicks-info{
-  background-image: url('../img/kicks/bg.png');
+  /* background-image: url('../img/kicks/bg.png'); */
+  background: #FFF8F9;
+}
+.kicks-info .color-area01 {
+background: #FFF4F5;
+    height: 100%;
+    width: 6%;
+    position: absolute;
+    left: 0%;
+    z-index: 0;
+}
+.kicks-info .color-area02 {
+background: #F6E9EB;
+    height: 100%;
+    width: 1.5%;
+    position: absolute;
+    left: 3%;
+    z-index: 0;
+}
+.kicks-info .color-area03 {
+    background: #FFF4F5;
+    height: 100%;
+    width: 42%;
+    position: absolute;
+    right: 5%;
+    z-index: 0;
+}
+.kicks-info .color-area04 {
+    background: #F6E9EB;
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    right: 5%;
+    z-index: 0;
 }
 .kicks-info .deco01 {
     position: absolute;
@@ -645,13 +687,13 @@ header .nav-bar a {
 
 }
 .kicks-info .deco05 {
-    position: absolute;
+position: absolute;
     top: 30%;
-    right: 0;
+    right: -30px;
     width: 350px;
     height: auto;
     object-fit: cover;
-    z-index: 0;
+    z-index: 2;
 }
 .kicks-info .kicks-next-btn{
     color: #616161;
@@ -672,6 +714,7 @@ header .nav-bar a {
     left: 50%;
     transform: translateX(-50%);
     text-decoration: none;
+    letter-spacing: 5px
 }
 .kicks-info .kicks-next-btn:hover{
     background: #F2F2F2;
@@ -689,16 +732,49 @@ header .nav-bar a {
 }
 
 .sentra-info{
-  background-image: url('../img/sentra/bg.png');
+  /* background-image: url('../img/sentra/bg.png'); */
+  background: #FAFCFF;
+}
+.sentra-info .color-area01 {
+    background: #F2F7FE;
+    height: 100%;
+    width: 42%;
+    position: absolute;
+    left: 5%;
+    z-index: 0;
+}
+.sentra-info .color-area02 {
+    background: #E9EEF6;
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    z-index: 0;
+}
+.sentra-info .color-area03 {
+    background: #F2F7FE;
+    height: 100%;
+    width: 6%;
+    position: absolute;
+    right: 0%;
+    z-index: 0;
+}
+.sentra-info .color-area04 {
+  background: #E9EEF6;
+    height: 100%;
+    width: 1.5%;
+    position: absolute;
+    right: 3%;
+    z-index: 0;
 }
 .sentra-info .deco04 {
     position: absolute;
     top: 180px;
     left: 0;
-    width: 237px;
+    width: 300px;
     height: auto;
     object-fit: cover;
-    z-index: 0;
+    z-index: 2;
 }
 .sentra-info .deco02 {
     position: absolute;
@@ -739,6 +815,7 @@ header .nav-bar a {
     left: 50%;
     transform: translateX(-50%);
     text-decoration: none;
+     letter-spacing: 5px
 }
 .sentra-info .sentra-previous-btn:hover{
     background: #F2F2F2;
@@ -788,17 +865,20 @@ header .nav-bar a {
 }
 .car-slide-box .kicks-font-color{
   letter-spacing: 10px;
+  line-height: 1; 
 }
 .car-slide-box .sentra-font-color{
   letter-spacing: 5px;
+  line-height: 1;
 }
 
 .car-slide-box .car-info-box .car-feature-title{
-  font-size: 36px;
-  padding: 5px 30px;background: #FFFFFF;
+  font-size: 32px;
+  padding: 5px 30px;
+  background: #FFFFFF;
   box-shadow: 0px 0px 25px 0px #0000000D;
-  margin: 15px 0 10px 0;
-  letter-spacing: 10px;
+  margin: 40px 0px 15px 0px;
+  letter-spacing: 30%;
   color: #616161;
   font-family: "Noto Serif TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
@@ -806,6 +886,7 @@ header .nav-bar a {
   font-size: 20px;
   color: #616161;
   height: 100px;
+  letter-spacing: 10%;
 }
 
 
@@ -823,6 +904,9 @@ header .nav-bar a {
     flex-direction: column;
     align-items: center;
     background: white;
+}
+.price-info .item-colum{
+    height: 600px;
 }
 .price-info .price-box{
     width: 480px;
@@ -842,8 +926,9 @@ header .nav-bar a {
 .price-info .price-box .car-name{
   text-align: center;
   color: #7B7B7B;
-  margin: 15px 0px;
+  margin: 0 0 27px;
   letter-spacing: 10px;
+  line-height: 1;
 }
 .price-info .price-box table{
     width: 100%;
@@ -854,7 +939,16 @@ header .nav-bar a {
     text-align: center;
     color: #616161;
 }
-
+.price-info .price-box table.mobile-table {
+    display: none;
+}
+.price-info .price-box table.web-table .special-offer {
+    font-size: 10px;
+    color: #89610A; 
+    margin-left: 3px;
+    background: #F3E1B8;
+    padding: 2px 4px;
+}
 .price-info .pdf-download-box{
   font-size: 14px;
   height: 44px;
@@ -880,16 +974,32 @@ header .nav-bar a {
   height: 24px;
   margin-left: 5px;
 }
-.price-info .reserve-btn{
+.price-info .reserve-btn {
     width: 400px;
     height: 125px;
     margin-bottom: 60px;
-    background-image: url(../img/icon/reserve_btn.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+    background-image: url(../img/icon/reserve_btn.png);
+    position: relative;
+    z-index: 1;
 }
-.price-info .reserve-btn:hover{
-  background-image: url('../img/icon/reserve_btn_hover.png');
+.price-info .reserve-btn::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../img/icon/reserve_btn_hover.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+.price-info .reserve-btn:hover::after {
+    opacity: 1;
 }
 
 .price-info .copyright{
@@ -950,6 +1060,8 @@ header .nav-bar a {
    Popup Modal 彈窗
    ========================================================================== */
 .popup-overlay {
+  background-image: url(../img/tvc/bg_video-section.png);
+  background-size: cover;
   display: flex;
   position: fixed;
   top: 0;
@@ -978,14 +1090,11 @@ header .nav-bar a {
 }
 
 .popup-content {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  background-color: #000;
-  border-radius: 8px;
-  overflow: visible;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    overflow: visible;
 }
 
 .popup-close {
@@ -1046,17 +1155,37 @@ header .nav-bar a {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* 起始位置在下方 30px */
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);    /* 回到原位 */
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes fadeInDown {
   0% {
     opacity: 0;
     transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -1073,6 +1202,16 @@ header .nav-bar a {
     transform: translateX(0);
   }
 }
+@keyframes fadeInLeft2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -1083,9 +1222,116 @@ header .nav-bar a {
     transform: translateX(0);
   }
 }
+@keyframes fadeInRight2 {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .fade-in { animation: fadeIn 1.7s ease-in forwards; }
 .fade-in-up { animation: fadeInUp 1.7s ease-in forwards; }
+.fade-in-up2 { animation: fadeInUp2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
 .fade-in-down { animation: fadeInDown 1.7s ease-in forwards; }
+.fade-in-down2 { animation: fadeInDown2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
 .fade-in-left { animation: fadeInLeft 1.7s ease-in forwards; }
+.fade-in-left2 { animation: fadeInLeft2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
 .fade-in-right { animation: fadeInRight 1.7s ease-in forwards; }
+.fade-in-right2 { animation: fadeInRight2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
+
+
+/* ======================================================
+   平板版 (Tablet)：768px - 1179px
+   ====================================================== */
+@media screen and (max-width: 1179px) {
+    .swiper-v .swiper-wrapper-v{
+      overflow-y: auto;
+    }
+
+    .tvc-info{
+      flex-direction: column;
+    }
+
+    .car-slide-box {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .KICKS .swiper-pagination {
+        bottom: calc((100vh - 420px) / 2 - 250px);
+    }      
+    .KICKS .car-slide-box .car-info-box{
+      margin-bottom: 50px;
+      margin-right: 0px;
+    }
+    .kicks-info .deco05{
+        top: 55%;
+        right: -100px;
+    }
+
+    .SENTRA .car-slide-box .car-info-box{
+      margin-top: 100px;
+      margin-left: 0px;
+    }
+    .SENTRA .swiper-pagination{
+      bottom: calc((100vh - 420px) - 200px);
+    }
+
+    .price-info .item-colum{
+      height: 100%;
+    }
+    .price-info .price-box{
+      width: auto;
+    }
+    .price-info .pdf-download-box{
+        width: 50%;
+        margin: auto;
+    }
+
+    .price-info .price-box table.web-table {
+        display: none;
+    }
+    .price-info .price-box table.mobile-table {
+        position: relative;
+        display: table;
+        width: 100%;
+        border-spacing: 0px;
+        border: 5px solid #F7F7F7;
+    }
+    .price-info .price-box table.mobile-table tr td:first-child{
+        width: 45%;
+        border-right: 1px solid #E2E2E2;
+        padding-left: 5px;
+    }
+    .price-info .price-box table.mobile-table tr td:nth-child(2){
+        width: 55%;
+        text-align: right;
+        font-size: 18px;
+        padding-right: 10px;
+    }
+    .price-info .price-box table.mobile-table .special-offer {
+      position: absolute;
+        width: 32px;
+        top: 0px;
+        left: -25px;
+        font-size: 10px;
+        color: #89610A;
+        background: #F3E1B8;
+        padding: 1px;
+    }
+
+}
+
+
+/* ======================================================
+   手機版 (Mobile)：≤ 767px
+   ====================================================== */
+@media screen and (max-width: 767px) {
+
+
+
+}
