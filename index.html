@@ -38,9 +38,12 @@
 				<a href="https://new.nissan.com.tw/nissan">
 					<img class="logo" src="./assets/img/icon/logo-b.png">
 				</a>
-				<div class="d-flex-around" style="width: 350px;">
+				<div class="web-menu d-flex-around" style="width: 350px;">
 					<a class="nav-kicks-btn">KICKS 新発売</a>
 					<a class="nav-sentra-btn">SENTRA 新発売</a>
+				</div>
+				<div class="mob-menu">
+					<a class="mob-menu-btn"></a>
 				</div>
 			</div>
 		</header>
@@ -59,7 +62,8 @@
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
 										<div class="banner-box">
-											<img src="./assets/img/banner/banner01_pc.jpg" alt="banner1">
+											<img class="banner-pc" src="./assets/img/banner/banner01_pc.jpg" alt="banner1">
+											<img class="banner-m" src="./assets/img/banner/banner01_m.jpg" alt="banner1">
 											<img class="banner-tag fade-in" src="./assets/img/banner/kicks_tag.svg">
 											<div class="banner-content fade-in">
 												<img class="banner-content-title" src="./assets/img/banner/kicks_content_title.svg">
@@ -75,7 +79,8 @@
 									</div>
 									<div class="swiper-slide">
 										<div class="banner-box">
-											<img src="./assets/img/banner/banner02_pc.jpg" alt="banner2">
+											<img class="banner-pc" src="./assets/img/banner/banner02_pc.jpg" alt="banner2">
+											<img class="banner-m" src="./assets/img/banner/banner02_m.jpg" alt="banner2">
 											<img class="banner-tag fade-in" src="./assets/img/banner/sentra_tag.svg">
 											<div class="banner-content fade-in">
 												<img class="banner-content-title" src="./assets/img/banner/sentra_content_title.svg">
@@ -124,15 +129,15 @@
 					<!-- Slide 3: KICKS -->
 					<div class="swiper-slide">
 						<div class="kicks-info">
-							<div class="color-area01 fade-in-right"></div>
-							<div class="color-area02 fade-in-right"></div>
-							<div class="color-area03 fade-in-left"></div>
-							<div class="color-area04 fade-in-left"></div>
-							<img class="deco01 fade-in-left2" src="./assets/img/kicks/deco01.png">
-							<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
-							<img class="deco05 fade-in-right2" src="./assets/img/kicks/deco05.png">
 							<div class="swiper swiper-h KICKS w-100 h-100">
 								<div class="swiper-wrapper">
+									<div class="color-area01 fade-in-right"></div>
+									<div class="color-area02 fade-in-right"></div>
+									<div class="color-area03 fade-in-left"></div>
+									<div class="color-area04 fade-in-left"></div>
+									<img class="deco01 fade-in-left2" src="./assets/img/kicks/deco01.png">
+									<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
+									<img class="deco05 fade-in-right2" src="./assets/img/kicks/deco05.png">
 									<div class="swiper-slide">
 										<div class="car-slide-box fade-in">
 											<div class="car-info-box">
@@ -181,6 +186,8 @@
 										</div>
 									</div>
 								</div>
+								<div class="swiper-button-next"></div>
+    							<div class="swiper-button-prev"></div>
 								<div class="car-slide-box fade-in" style="position: absolute;height: auto; z-index: 1;">
 									<div class="car-info-box"></div>
 									<div class="car-img-box">
@@ -197,19 +204,19 @@
 					<!-- Slide 4: SENTRA -->
 					<div class="swiper-slide">
 						<div class="sentra-info">
-							<div class="color-area01 fade-in-right"></div>
-							<div class="color-area02 fade-in-right"></div>
-							<div class="color-area03 fade-in-left"></div>
-							<div class="color-area04 fade-in-left"></div>
-							<img class="deco04 fade-in-left" src="./assets/img/sentra/deco04.png">
-							<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
-							<img class="deco05 fade-in-down2" src="./assets/img/kicks/deco05.png">
 							<a class="sentra-previous-btn nav-kicks-btn">								
 								<span>KICKS</span>
 								<img src="./assets/img/kicks/arrow.png">
 							</a>
 							<div class="swiper swiper-h SENTRA w-100 h-100">
 								<div class="swiper-wrapper">
+									<div class="color-area01 fade-in-right"></div>
+									<div class="color-area02 fade-in-right"></div>
+									<div class="color-area03 fade-in-left"></div>
+									<div class="color-area04 fade-in-left"></div>
+									<img class="deco04 fade-in-left" src="./assets/img/sentra/deco04.png">
+									<img class="deco02 fade-in-up2" src="./assets/img/kicks/deco02.png">
+									<img class="deco05 fade-in-down2" src="./assets/img/kicks/deco05.png">
 									<div class="swiper-slide">
 										<div class="car-slide-box fade-in">
 											<div class="car-img-box fade-in-left">
@@ -250,6 +257,8 @@
 										</div>
 									</div>
 								</div>
+								<div class="swiper-button-next"></div>
+    							<div class="swiper-button-prev"></div>
 								<div class="car-slide-box fade-in" style="position: absolute;height: auto; z-index: 1;">
 									<div class="car-img-box">
 										<div class="swiper-pagination" style="counter-reset: swiper-pagination-index;"></div>
@@ -359,7 +368,18 @@
 									</div>
 								</div>
 							</div>
-							<a href="https://service.nissan.com.tw/testdrive/?tblci=GiBwoVC7N78UZpVMVPYWAnnFzj_wkCpmaIWeJj_EsX1BaiDTvWQojLGM9JS3gJYZML6DYw" target="_blank" class="d-flex-center reserve-btn fade-in"></a>
+							<div class="web-footer">
+								<a href="https://service.nissan.com.tw/testdrive/?tblci=GiBwoVC7N78UZpVMVPYWAnnFzj_wkCpmaIWeJj_EsX1BaiDTvWQojLGM9JS3gJYZML6DYw" target="_blank" class="d-flex-center reserve-btn fade-in"></a>
+								<p class="d-flex-center copyright">
+									© NISSAN TAIWAN.
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- Slide 6: Mobile Footer -->
+					<div class="mob-footer">
+						<div class="price-info">							
+							<a  href="https://service.nissan.com.tw/testdrive/?tblci=GiBwoVC7N78UZpVMVPYWAnnFzj_wkCpmaIWeJj_EsX1BaiDTvWQojLGM9JS3gJYZML6DYw" target="_blank" class="d-flex-center reserve-btn fade-in"></a>
 							<p class="d-flex-center copyright">
 								© NISSAN TAIWAN.
 							</p>
@@ -369,15 +389,26 @@
 			</div>
 		</div>
 
+		<!-- Mobile Menu -->
+		<div class="mob-menu-overlay" id="mobMenuOverlay">
+			<div class="mob-menu-content">
+				<div class="mob-menu-header d-flex-between">
+					<a href="https://new.nissan.com.tw/nissan">
+						<img class="logo" src="./assets/img/icon/logo-b.png">
+					</a>
+					<button class="popup-close" id="mobMenuClose"></button>
+				</div>
+				<nav class="mob-menu-nav">
+					<a class="nav-kicks-btn mob-nav-kicks-btn">KICKS 新発売</a>
+					<a class="nav-sentra-btn mob-nav-sentra-btn">SENTRA 新発売</a>
+				</nav>
+			</div>
+		</div>
+
 		<!-- Popup Modal -->
 		<div class="popup-overlay" id="popupOverlay">
 			<div class="popup-content">
-				<button class="popup-close" id="popupClose">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<line x1="18" y1="6" x2="6" y2="18"></line>
-						<line x1="6" y1="6" x2="18" y2="18"></line>
-					</svg>
-				</button>
+				<button class="popup-close" id="popupClose"></button>
 				<iframe id="popupVideo" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 		</div>

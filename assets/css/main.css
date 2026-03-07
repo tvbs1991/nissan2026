@@ -115,6 +115,36 @@ header .nav-bar a {
   cursor: pointer;
 }
 
+header .web-menu{
+
+}
+header .mob-menu{
+  display: none;
+}
+
+.web-footer{
+  display: block;
+  width: 100%;
+}
+.mob-footer{
+  display: none;
+}
+
+.mob-menu-btn {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background-image: url('../img/icon/mob_menu.svg');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.mob-menu-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
 .nav-kicks-btn,
 .nav-sentra-btn {
   position: relative;
@@ -287,6 +317,13 @@ header .nav-bar a {
   justify-content: end;
   bottom: calc((100vh - 420px) / 2 - 60px);
 }
+.KICKS .swiper-button-next,
+.KICKS .swiper-button-prev,
+.SENTRA .swiper-button-next,
+.SENTRA .swiper-button-prev {
+  display: none;
+}
+
 .SENTRA .swiper-pagination-bullet-active {
   color: #fff;
   background: #781F2B;
@@ -316,6 +353,10 @@ header .nav-bar a {
   height: 100%;
   padding: 10px;
 }
+
+.banner-info .banner-box .banner-pc { display: block; }
+.banner-info .banner-box .banner-m  { display: none; }
+
 .banner-info .deco{
     position: absolute;
     width: 25px;
@@ -355,8 +396,8 @@ header .nav-bar a {
     height: auto;
 }
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag{
-  width: 196px;
-  height: auto;
+    width: 15vw;
+    height: auto;
 }
 .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content{
     position: absolute;
@@ -977,6 +1018,7 @@ position: absolute;
 .price-info .reserve-btn {
     width: 400px;
     height: 125px;
+    margin: auto;
     margin-bottom: 60px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1054,6 +1096,76 @@ position: absolute;
   .footer .content .community_box .community .community_content { font-size: 17px; }
   .footer .content .community_box .community .community_content p:nth-child(2) { font-size: 15px; }
   .footer .copyright { font-size: 15px; }
+}
+
+/* ==========================================================================
+   Mobile Menu Overlay
+   ========================================================================== */
+.mob-menu-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.mob-menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mob-menu-overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mob-menu-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mob-menu-header {
+  padding: 35px 35px;
+  flex-shrink: 0;
+}
+
+.mob-menu-header .logo {
+  width: 71px;
+  height: 60px;
+}
+
+.mob-menu-header .popup-close {
+  position: static;
+  top: unset;
+  right: unset;
+}
+
+.mob-menu-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mob-menu-nav a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 15px 20px;
+}
+
+.mob-menu-nav a:hover {
+  color: #C41E3A;
 }
 
 /* ==========================================================================
@@ -1281,6 +1393,69 @@ position: absolute;
       bottom: calc((100vh - 420px) - 200px);
     }
 
+    .KICKS .swiper-button-next,
+    .KICKS .swiper-button-prev,
+    .SENTRA .swiper-button-next,
+    .SENTRA .swiper-button-prev {
+      display: block;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .KICKS .swiper-button-next,
+    .KICKS .swiper-button-prev{
+      top: 70%;
+    }
+
+    .SENTRA .swiper-button-next,
+    .SENTRA .swiper-button-prev{
+      top: 30%;
+    }
+
+    .KICKS .swiper-button-next,
+    .SENTRA .swiper-button-next{
+        right: 10%;
+    }
+    .KICKS .swiper-button-prev,
+    .SENTRA .swiper-button-prev{
+        left: 10%;
+    }
+
+
+    .KICKS .swiper-button-next::after,
+    .KICKS .swiper-button-prev::after,
+    .SENTRA .swiper-button-next::after,
+    .SENTRA .swiper-button-prev::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: invert(70%) sepia(0%) saturate(0%) brightness(90%);
+    }
+
+    .KICKS .swiper-button-next::after,
+    .SENTRA .swiper-button-next::after {
+      background-image: url('../img/icon/fi-rr-angle-right.svg');
+    }
+
+    .KICKS .swiper-button-prev::after,
+    .SENTRA .swiper-button-prev::after {
+      background-image: url('../img/icon/fi-rr-angle-left.svg');
+    }
+
+    .KICKS .swiper-button-next:hover::after,
+    .KICKS .swiper-button-prev:hover::after,
+    .SENTRA .swiper-button-next:hover::after,
+    .SENTRA .swiper-button-prev:hover::after {
+      /* filter: invert(20%) sepia(0%) saturate(0%) brightness(40%); */
+    }
+
     .price-info .item-colum{
       height: 100%;
     }
@@ -1332,6 +1507,149 @@ position: absolute;
    ====================================================== */
 @media screen and (max-width: 767px) {
 
+    header .nav-bar {
+        padding: 35px 35px;
+    }
 
+    header .web-menu{
+      display: none;
+
+    }
+    header .mob-menu{
+      display: block;
+    }
+
+    .banner-info .banner-box .banner-pc { display: none; }
+    .banner-info .banner-box .banner-m  { display: block; }
+
+    .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+        top: 35%;
+        right: 0;
+        left: 0;
+        width: 65vw;
+    }
+
+    .popup-overlay .popup-close {
+      top: unset;
+      bottom:50vh;
+      right: 0px;
+    }
+
+
+    .tvc-info .tvc-info-column{
+      width: 80%;
+    }
+    .tvc-info .tvc-info-column .tvc-kicks-title,
+    .tvc-info .tvc-info-column .tvc-sentra-title{
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+    .tvc-info .tvc-kicks-img {
+        position: relative;
+        margin-top: 40px;
+        border: 10px solid #F6E9EB;
+        box-shadow: 0px 0px 25px 0px #0000001A;
+        width: 320px;
+        height: 198px;
+        overflow: hidden;
+        background-image: url(../img/banner/banner01_m.jpg);
+        background-position: center 60%;
+        background-size: 100%;
+    }
+    .tvc-info .tvc-sentra-img {
+        position: relative;
+        margin-top: 40px;
+        border: 10px solid #E9EEF6;
+        box-shadow: 0px 0px 25px 0px #0000001A;
+        width: 320px;
+        height: 198px;
+        overflow: hidden;
+        background-image: url(../img/banner/banner02_m.jpg);
+        background-position: center 70%;
+        background-size: 100%;
+    }
+    .KICKS .car-slide-box .car-info-box {
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    .KICKS .swiper-pagination,
+    .SENTRA .swiper-pagination {
+        bottom: calc((100vh - 420px) / 4);
+        justify-content: center;
+    }
+
+    .KICKS .swiper-button-next,
+    .KICKS .swiper-button-prev,
+    .KICKS .swiper-button-next::after,
+    .KICKS .swiper-button-prev::after,
+    .SENTRA .swiper-button-next,
+    .SENTRA .swiper-button-prev,
+    .SENTRA .swiper-button-next::after,
+    .SENTRA .swiper-button-prev::after{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .KICKS .swiper-button-prev,
+    .SENTRA .swiper-button-prev{
+      top: 70%;
+      left:3%;
+    }
+    .KICKS .swiper-button-next,
+    .SENTRA .swiper-button-next{
+      top: 70%;
+      right:3%
+    }
+
+    .car-slide-box .car-info-box .car-feature-title {
+        font-size: 18px;
+    }
+    .car-slide-box .car-info-box .car-feature-directions {
+        font-size: 16px;
+        width: 75%;
+    }
+    .car-slide-box .car-img-box {
+        width: 75%;
+        position: relative;
+        margin-bottom: 80px;
+    }
+
+    .kicks-info .kicks-next-btn{
+        width: 50%;
+        bottom: 10px;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+    .sentra-info .sentra-previous-btn{
+        width: 50%;
+        top: 10px;
+        border-radius: 10px;
+        padding: 10px 0;
+    }
+
+    .sentra-info .car-slide-box {
+      flex-direction: column-reverse;
+    }
+    .SENTRA .car-slide-box .car-info-box{
+      margin-bottom: 20px;
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+
+    .price-info{
+      
+    }
+    .price-info .item-colum{
+      flex-direction: column;
+    }
+    .web-footer{
+      display: none;
+    }
+    .mob-footer{
+      display: block;
+      height: 30%;;
+    }
 
 }
