@@ -52,36 +52,41 @@ function handleGoToTopClick() {
 }
 
 let mobileCurrentSlideIndex = -1;
+let mobileLastScrollTop = 0;
 
 function handleMobilePanelScroll() {
   const panelEl = document.querySelector('.swiper-wrapper-v');
-  // const goToTopBtn = document.querySelector('.go-to-top-btn');
   const headerEl = document.querySelector('header');
   const scrollTop = panelEl ? panelEl.scrollTop : window.scrollY;
+  const scrollingDown = scrollTop > mobileLastScrollTop;
+  mobileLastScrollTop = scrollTop;
+
   if (scrollTop > 0) {
-    // if (goToTopBtn) goToTopBtn.classList.add('show');
     if (headerEl) headerEl.classList.add('hide');
   } else {
-    // if (goToTopBtn) goToTopBtn.classList.remove('show');
     if (headerEl) headerEl.classList.remove('hide');
   }
 
+  // 向上滾不觸發動畫
+  if (!scrollingDown) return;
+
   // 偵測當前可見 slide，觸發 fade-in
-  // if (panelEl) {
-  //   const slides = panelEl.querySelectorAll(':scope > .swiper-slide');
-  //   const panelHeight = panelEl.clientHeight;
-  //   let activeIndex = -1;
-  //   slides.forEach((slide, i) => {
-  //     const slideTop = slide.offsetTop - scrollTop;
-  //     if (slideTop <= panelHeight / 2 && slideTop > -panelHeight / 2) {
-  //       activeIndex = i;
-  //     }
-  //   });
-  //   if (activeIndex !== -1 && activeIndex !== mobileCurrentSlideIndex) {
-  //     mobileCurrentSlideIndex = activeIndex;
-  //     triggerFadeInElements(slides[activeIndex]);
-  //   }
-  // }
+  if (panelEl) {
+    const slides = panelEl.querySelectorAll(':scope > .swiper-slide');
+    const panelHeight = panelEl.clientHeight;
+    let activeIndex = -1;
+    slides.forEach((slide, i) => {
+      const slideTop = slide.offsetTop - scrollTop;
+      if (slideTop <= panelHeight - 70) {
+        activeIndex = i;
+      }
+    });
+    if (activeIndex !== -1 && activeIndex !== mobileCurrentSlideIndex) {
+      mobileCurrentSlideIndex = activeIndex;
+      if(mobileCurrentSlideIndex === 0) return;
+      triggerFadeInElements(slides[activeIndex]);
+    }
+  }
 }
 
 function handleWheel(e) {
@@ -118,6 +123,7 @@ function bindGoToTop() {
 
 function bindMobileScroll() {
   mobileCurrentSlideIndex = -1;
+  mobileLastScrollTop = 0;
   const panelEl = document.querySelector('.swiper-wrapper-v');
   const target = panelEl || window;
   target.removeEventListener('scroll', handleMobilePanelScroll);

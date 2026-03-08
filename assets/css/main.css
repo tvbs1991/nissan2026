@@ -1327,9 +1327,25 @@ position: absolute;
     }
 
     .banner-info .banner-box .banner-tag {
-      bottom: 35px;
-      left: 35px;
+        bottom: 50px;
+        left: 50px;
     }
+
+    .banner-info .BANNER .swiper-slide:first-child .banner-tag,
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
+        height: 5vh;
+    }
+    .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+        top: 25%;
+        right: 0;
+        left: 0;
+        width: 50vw;
+    }
+    .banner-info .banner-box .banner-content a {
+        font-size: 28px;
+    }
+
 
     .tvc-info{
       flex-direction: column;
@@ -1338,27 +1354,95 @@ position: absolute;
     .car-slide-box {
       flex-direction: column;
       height: auto;
+      padding: 30px 0;
     }
 
-    .KICKS .swiper-pagination {
-        bottom: calc((100vh - 420px) / 2 - 250px);
-    }      
-    .KICKS .car-slide-box .car-info-box{
-      margin-bottom: 50px;
-      margin-right: 0px;
-    }
-    .kicks-info .deco05{
-        top: 55%;
-        right: -100px;
-    }
-
-    .SENTRA .car-slide-box .car-info-box{
-      margin-top: 100px;
-      margin-left: 0px;
-    }
+    .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination{
-      bottom: calc((100vh - 420px) - 200px);
+        bottom: calc((100vh - 420px) / 2 - 210px);
     }
+    .SENTRA .car-slide-box .car-info-box, 
+    .KICKS .car-slide-box .car-info-box{
+        margin-bottom: 50px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .kicks-info .color-area01 {
+        width: 100%;
+        top: 0%;
+        left: 0;
+    }
+    .kicks-info .color-area02 {
+        height: 2%;
+        width: 100%;
+        top: 3%;
+        left: 0;
+    }
+    .kicks-info .color-area03 {
+        height: 42%;
+        width: 100%;
+        bottom: 5%;
+        right: 0;
+    }
+    .kicks-info .color-area04 {
+        height: 43%;
+        width: 100%;
+        bottom: 2%;
+        right: 0;
+    }
+    .kicks-info .deco01 {
+        left: -150px;
+        width: 330px;
+    }
+    .kicks-info .deco02 {
+        left: 100px;
+    }
+    .kicks-info .deco05 {
+        right: -155px;
+        width: 300px;
+        top: 60%;
+    }
+
+
+    .sentra-info .color-area01 {
+        height: 6%;
+        width: 100%;
+        top: 0%;
+        left: 0;
+    }
+    .sentra-info .color-area02 {
+        height: 2%;
+        width: 100%;
+        top: 3%;
+        left: 0;
+    }
+    .sentra-info .color-area03 {
+        height: 42%;
+        width: 100%;
+        bottom: 5%;
+        right: 0;
+    }
+    .sentra-info .color-area04 {
+        height: 43%;
+        width: 100%;
+        bottom: 2%;
+        right: 0;
+    }
+    .sentra-info .deco04 {
+        top: 41%;
+    }
+    .sentra-info .deco02 {
+      /* nothing */
+    }
+    .sentra-info .deco05 {
+        right: 20%;
+    }
+
+    .car-slide-box .car-info-box img{
+      
+    }
+
 
     .KICKS .swiper-button-next,
     .KICKS .swiper-button-prev,
@@ -1373,13 +1457,10 @@ position: absolute;
     }
 
     .KICKS .swiper-button-next,
-    .KICKS .swiper-button-prev{
-      top: 70%;
-    }
-
+    .KICKS .swiper-button-prev,
     .SENTRA .swiper-button-next,
     .SENTRA .swiper-button-prev{
-      top: 30%;
+      top: 70%;
     }
 
     .KICKS .swiper-button-next,
@@ -1435,6 +1516,9 @@ position: absolute;
         border-radius: 10px;
         padding: 10px 0;
     }
+    .sentra-info .car-slide-box {
+      flex-direction: column-reverse;
+    }
 
     .price-info .item-colum{
       height: 100%;
@@ -1443,7 +1527,7 @@ position: absolute;
       width: auto;
     }
     .price-info .pdf-download-box{
-        width: 50%;
+        width: 278px;
         margin: auto;
     }
 
@@ -1453,7 +1537,7 @@ position: absolute;
     .price-info .price-box table.mobile-table {
         position: relative;
         display: table;
-        width: 100%;
+        width: 278px;
         border-spacing: 0px;
         border-style: solid;
         border-color: #F7F7F7;
@@ -1534,7 +1618,7 @@ position: absolute;
 
     .popup-overlay .popup-close {
       top: unset;
-      bottom:50vh;
+      bottom: 200%;
       right: 0px;
     }
 
@@ -1578,8 +1662,42 @@ position: absolute;
     }
     .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination {
-        bottom: calc((100vh - 420px) / 4);
+        bottom: calc((100vh - 420px) / 4 + 30px);
         justify-content: center;
+    }
+
+
+    .kicks-info .deco01 {
+        left: -100px;
+        top: 35%;
+        width: 189px;
+        rotate: -30deg;
+    }
+    .kicks-info .deco02 {
+        left: 50px;
+        top: -50px;
+        width: 130px;
+    }
+    .kicks-info .deco05 {
+        right: -100px;
+        width: 189px;
+        top: 80%;
+    }
+    .sentra-info .deco04 {
+        left: -100px;
+        top: 35%;
+        width: 184px;
+        rotate: -30deg;
+    }
+    .sentra-info .deco02 {
+        width: 133px;
+        right: -40px;
+        top: 20px;
+    }
+    .sentra-info .deco05 {
+        bottom: -40px;
+        right: 4%;
+        width: 196px;
     }
 
     .KICKS .swiper-button-next,
@@ -1625,27 +1743,21 @@ position: absolute;
         width: 50%;
     }
 
-    .sentra-info .car-slide-box {
-      flex-direction: column-reverse;
-    }
     .SENTRA .car-slide-box .car-info-box{
       margin-bottom: 20px;
       margin-top: 0px;
       margin-left: 0px;
     }
 
-    .price-info{
-      
+
+    .price-info .price-box img{
+      width: 235px;
+      height: auto;
+      margin: auto;
     }
+
     .price-info .item-colum{
       flex-direction: column;
-    }
-    .web-footer{
-      display: none;
-    }
-    .mob-footer{
-      display: block;
-      height: 30%;;
     }
 
 }
