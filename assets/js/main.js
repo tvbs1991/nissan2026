@@ -71,6 +71,7 @@ function handleGoToTopClick() {
 
 let mobileCurrentSlideIndex = -1;
 let mobileLastScrollTop = 0;
+const triggeredSlides = new Set();
 
 function handleMobilePanelScroll() {
   const panelEl = document.querySelector('.swiper-wrapper-v');
@@ -85,25 +86,27 @@ function handleMobilePanelScroll() {
     if (headerEl) headerEl.classList.remove('hide');
   }
 
-  // 向上滾不觸發動畫
-  if (!scrollingDown) return;
-
-  // 偵測當前可見 slide，觸發 fade-in
   if (panelEl) {
     const slides = panelEl.querySelectorAll(':scope > .swiper-slide');
     const panelHeight = panelEl.clientHeight;
-    let activeIndex = -1;
+    
     slides.forEach((slide, i) => {
       const slideTop = slide.offsetTop - scrollTop;
-      if (slideTop <= panelHeight - 70) {
-        activeIndex = i;
+      const slideRatio = slideTop / panelHeight;
+      
+      // console.log(`Slide ${i}: slideTop=${slideTop}, slideRatio=${slideRatio.toFixed(2)}, scrollingDown=${scrollingDown}`);
+
+      if (scrollingDown) {
+        if (slideRatio >= 0.9 && slideRatio <= 1.0){
+          triggerFadeInElements(slides[i]);
+        };
+
+      } else {
+        if (slideRatio >= 0.0 && slideRatio <= 0.1){        
+          triggerFadeInElements(slides[i-1]);
+        }
       }
     });
-    if (activeIndex !== -1 && activeIndex !== mobileCurrentSlideIndex) {
-      mobileCurrentSlideIndex = activeIndex;
-      if(mobileCurrentSlideIndex === 0) return;
-      triggerFadeInElements(slides[activeIndex]);
-    }
   }
 }
 
@@ -143,6 +146,7 @@ function bindGoToTop() {
 function bindMobileScroll() {
   mobileCurrentSlideIndex = -1;
   mobileLastScrollTop = 0;
+  triggeredSlides.clear();
   const panelEl = document.querySelector('.swiper-wrapper-v');
   const target = panelEl || window;
   target.removeEventListener('scroll', handleMobilePanelScroll);
@@ -196,6 +200,7 @@ function destroyVerticalSwiper() {
     verticalSwiper.destroy(true, true);
     verticalSwiper = null;
   }
+  triggeredSlides.clear();
   document.removeEventListener('wheel', handleWheel);
 }
 
@@ -360,9 +365,17 @@ function performSwipe(direction) {
 // Fade In
 // =============================================
 
+const fadeInCooldowns = new Map();
+const fadeInCooldownTime = 3000;
+
 function triggerFadeInElements(slideEl) {
   const targetSlide = slideEl || (verticalSwiper ? verticalSwiper.slides[verticalSwiper.activeIndex] : null);
   if (!targetSlide) return;
+
+  // 冷卻時間防重複觸發
+  if (fadeInCooldowns.has(targetSlide)) return;
+  fadeInCooldowns.set(targetSlide, true);
+  setTimeout(() => fadeInCooldowns.delete(targetSlide), fadeInCooldownTime);
 
   targetSlide.querySelectorAll('.fade-in, .fade-in-up, .fade-in-up2, .fade-in-down, .fade-in-down2, .fade-in-left, .fade-in-left2, .fade-in-right, .fade-in-right2')
     .forEach((el) => {

@@ -974,7 +974,6 @@ position: absolute;
     position: absolute;
     bottom: 0;
     z-index: 1;
-    pointer-events: none;
 }
 .car-slide-box.pagination-anchor .car-img-box {
   height: 420px;
@@ -1413,14 +1412,14 @@ position: absolute;
 
     .car-slide-box {
       flex-direction: column;
-      height: auto;
+      height: 100%;
       padding: 15% 0;
     }
 
-    .KICKS .swiper-pagination,
+    /* .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination{
       bottom: -30px;
-    }
+    } */
     .landscape .KICKS .swiper-pagination,
     .landscape .SENTRA .swiper-pagination{
       bottom: -55px;
@@ -1433,6 +1432,7 @@ position: absolute;
         margin-right: auto;
         margin-left: auto;
         width: 560px;
+        min-height: 409px;
     }
 
     .car-slide-box .car-info-box .car-feature-directions ul{
