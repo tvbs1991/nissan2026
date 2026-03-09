@@ -44,16 +44,45 @@ h1, h3 {
   margin-bottom: 1rem;
 }
 
+.w-80{
+  width: 80% !important;
+}
 .w-100 {
-  width: 100%;
+  width: 100% !important;
+}
+.w-auto {
+  width: auto !important;
 }
 .h-100 {
-  height: 100%;
+  height: 100% !important;
 }
 
 .f-bold {
   font-weight: bold;
 }
+.f-10 {
+  font-size: 10px;
+}
+.f-12 {
+  font-size: 12px;
+}
+.f-14 {
+  font-size: 14px;
+}
+.f-16 {
+  font-size: 16px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.f-20 {
+  font-size: 20px;
+}
+.f-22 {
+  font-size: 22px;
+}
+
+
 
 .d-flex {
   display: flex;
@@ -273,6 +302,7 @@ header .mob-menu{
   border: none;
   cursor: pointer;
   opacity: 1;
+  margin: 0 !important;
 }
 .BANNER .swiper-pagination-bullet-active {
   background-image: url('../img/banner/dot-active.svg');
@@ -299,10 +329,14 @@ header .mob-menu{
   opacity: 1;
 }
 
+.SENTRA .swiper-pagination,
 .KICKS .swiper-pagination{
-  margin: auto;
-  justify-content: end;
-  bottom: calc((100vh - 420px) / 2 - 60px);
+    margin: auto;
+    margin-top: 8px;
+    justify-content: end;
+    counter-reset: swiper-pagination-index;
+    position: absolute;
+    bottom: -55px;
 }
 .KICKS .swiper-pagination-bullet-active {
   color: #fff;
@@ -312,11 +346,6 @@ header .mob-menu{
   padding: 0;
 }
 
-.SENTRA .swiper-pagination{
-  margin: auto;
-  justify-content: end;
-  bottom: calc((100vh - 420px) / 2 - 60px);
-}
 .KICKS .swiper-button-next,
 .KICKS .swiper-button-prev,
 .SENTRA .swiper-button-next,
@@ -705,7 +734,7 @@ background: #F6E9EB;
     height: 100%;
     width: 40%;
     position: absolute;
-    right: 5%;
+    right: 4%;
     z-index: 0;
 }
 .kicks-info .deco01 {
@@ -789,7 +818,7 @@ position: absolute;
     height: 100%;
     width: 40%;
     position: absolute;
-    left: 5%;
+    left: 4%;
     z-index: 0;
 }
 .sentra-info .color-area03 {
@@ -874,8 +903,8 @@ position: absolute;
 
 
 .car-slide-box{
-  width: 100%;
-    height: 370px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -928,14 +957,29 @@ position: absolute;
   color: #616161;
   height: 100px;
   letter-spacing: 10%;
+  width: 100%;
 }
-
+.car-slide-box .car-info-box .car-feature-directions ul{
+    letter-spacing: 5%;
+    padding-left: 40px;
+}
 
 .car-slide-box .car-img-box{
   width: 560px;
+  height: 420px;
   position: relative;
 }
 
+.car-slide-box.pagination-anchor {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.car-slide-box.pagination-anchor .car-img-box {
+  height: 420px;
+  justify-content: flex-end;
+}
 
 .price-info{
     width: 100%;
@@ -1340,10 +1384,19 @@ position: absolute;
         top: 25%;
         right: 0;
         left: 0;
-        width: 50vw;
+        width: 200px;
     }
-    .banner-info .banner-box .banner-content a {
-        font-size: 28px;
+    .landscape .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
+    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+        position: absolute;
+        color: #FFFFFF;
+        transform: translateY(-50%);
+        top: 70%;
+        right: 0;
+        left: 60%;
+        margin: 0 auto;
+        width: 17vw;
+        text-align: center;
     }
 
 
@@ -1351,21 +1404,40 @@ position: absolute;
       flex-direction: column;
     }
 
+    .tvc-info .tvc-info-column {
+        margin: 30px auto;
+    }
+    .tvc-info .tvc-kicks-img, .tvc-info .tvc-sentra-img {
+        margin: 30px auto 0;
+    }
+
     .car-slide-box {
       flex-direction: column;
       height: auto;
-      padding: 10% 0;
+      padding: 15% 0;
     }
 
     .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination{
-        bottom: calc((100vh - 420px) / 2 - 210px);
+      bottom: -30px;
     }
+    .landscape .KICKS .swiper-pagination,
+    .landscape .SENTRA .swiper-pagination{
+      bottom: -55px;
+    }
+
+
     .SENTRA .car-slide-box .car-info-box, 
     .KICKS .car-slide-box .car-info-box{
         margin-bottom: 50px;
         margin-right: auto;
         margin-left: auto;
+        width: 560px;
+    }
+
+    .car-slide-box .car-info-box .car-feature-directions ul{
+        white-space: nowrap;
+        padding-left: 20px;
     }
 
     .kicks-info .color-area01 {
@@ -1431,6 +1503,7 @@ position: absolute;
     }
     .sentra-info .deco04 {
         top: 41%;
+        left: -15%;
     }
     .sentra-info .deco02 {
       /* nothing */
@@ -1438,11 +1511,6 @@ position: absolute;
     .sentra-info .deco05 {
         right: 20%;
     }
-
-    .car-slide-box .car-info-box img{
-      
-    }
-
 
     .KICKS .swiper-button-next,
     .KICKS .swiper-button-prev,
@@ -1495,13 +1563,6 @@ position: absolute;
     .KICKS .swiper-button-prev::after,
     .SENTRA .swiper-button-prev::after {
       background-image: url('../img/icon/fi-rr-angle-left.svg');
-    }
-
-    .KICKS .swiper-button-next:hover::after,
-    .KICKS .swiper-button-prev:hover::after,
-    .SENTRA .swiper-button-next:hover::after,
-    .SENTRA .swiper-button-prev:hover::after {
-      /* filter: invert(20%) sepia(0%) saturate(0%) brightness(40%); */
     }
 
     .kicks-info .kicks-next-btn{
@@ -1614,6 +1675,11 @@ position: absolute;
         right: 0;
         left: 0;
         width: 65vw;
+        max-width: 290px;
+    }
+
+    .banner-info .banner-box .banner-content a{
+      font-size: 16px;
     }
 
     .popup-overlay .popup-close {
@@ -1634,11 +1700,11 @@ position: absolute;
     }
     .tvc-info .tvc-kicks-img {
         position: relative;
-        margin-top: 40px;
+        margin: 20px auto 0;
         border: 10px solid #F6E9EB;
         box-shadow: 0px 0px 25px 0px #0000001A;
-        width: 320px;
-        height: 198px;
+        width: 300px;
+        height: 178px;
         overflow: hidden;
         background-image: url(../img/banner/banner01_m.jpg);
         background-position: center 60%;
@@ -1646,16 +1712,26 @@ position: absolute;
     }
     .tvc-info .tvc-sentra-img {
         position: relative;
-        margin-top: 40px;
+        margin: 20px auto 0;
         border: 10px solid #E9EEF6;
         box-shadow: 0px 0px 25px 0px #0000001A;
-        width: 320px;
-        height: 198px;
+        width: 300px;
+        height: 178px;
         overflow: hidden;
         background-image: url(../img/banner/banner02_m.jpg);
         background-position: center 70%;
         background-size: 100%;
     }
+    .tvc-info .play-box .play-btn {
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 0 0 5px #FFFFFF80;
+    }
+    .tvc-info .play-btn img {
+        width: 11px;
+    }
+
+
     .KICKS .car-slide-box .car-info-box {
         width: 100%;
         margin-bottom: 20px;
@@ -1663,10 +1739,9 @@ position: absolute;
     }
     .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination {
-        bottom: calc((100vh - 420px) / 4 + 30px);
+        bottom: -55px;
         justify-content: center;
     }
-
 
     .kicks-info .deco01 {
         left: -100px;
@@ -1727,12 +1802,34 @@ position: absolute;
     .car-slide-box .car-info-box .car-feature-title {
         font-size: 18px;
     }
+    .car-slide-box .car-info-box .car-feature-title.over-size {
+        margin: 15px 0px 15px 0px;
+    }
     .car-slide-box .car-info-box .car-feature-directions {
         font-size: 16px;
         width: 75%;
     }
+    .car-slide-box .car-info-box .car-feature-directions.over-size{
+        width: 85%;
+        margin-bottom: 25px;
+    }
+
+    .car-slide-box .car-info-box .car-feature-directions ul{
+        white-space: nowrap;
+        padding-left: 20px;
+    }
+    .car-slide-box .car-info-box .car-feature-directions.over-size ul{
+        padding-left: 0;
+        font-size: 12px;
+        white-space: normal;
+    }
+    .car-slide-box .car-info-box .car-feature-directions.over-size ul li{
+        letter-spacing: 0px;
+    }
+
     .car-slide-box .car-img-box {
         width: 75%;
+        height: auto;
         position: relative;
         margin-bottom: 80px;
     }
@@ -1760,6 +1857,17 @@ position: absolute;
 
     .price-info .item-colum{
       flex-direction: column;
+    }
+
+    .mob-menu-btn {
+        width: 45px;
+        height: 45px;
+    }
+    .go-to-top-btn {
+        width: 45px;
+        height: 45px;
+    }.popup-close {    width: 45px;
+        height: 45px;
     }
 
 }

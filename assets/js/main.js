@@ -3,12 +3,30 @@ let verticalSwiper = null;
 let wheelAccumulator = 0;
 let isSwiping = false;
 let isDesktop = window.innerWidth >= mobileWindowWidth;
+let isLandscape = window.matchMedia('(orientation: landscape)').matches;
 const wheelThreshold = 150;
 const cooldownTime = 650;
+
+
+console.log(isLandscape);
 
 // =============================================
 // Handler Functions
 // =============================================
+
+function handleLandscapeChange() {
+  window.matchMedia('(orientation: landscape)').addEventListener('change', (e) => {
+    isLandscape = e.matches;
+
+    if(isLandscape){
+      document.body.classList.add('landscape');
+    } else {
+      document.body.classList.remove('landscape');
+    }
+
+    console.log('Orientation changed. Is landscape:', isLandscape);
+  });
+}
 
 function handleNavKicksClick(e) {
   e.preventDefault();
@@ -115,7 +133,8 @@ function bindNavButtons() {
 }
 
 function bindGoToTop() {
-  const goToTopBtn = document.querySelector('.go-to-top-btn');
+  const goToTopBtn = document.querySelector('.go-to-top-btn');  
+  goToTopBtn.classList.remove('show');
   if (!goToTopBtn) return;
   goToTopBtn.removeEventListener('click', handleGoToTopClick);
   goToTopBtn.addEventListener('click', handleGoToTopClick);
@@ -190,6 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     bindMobileScroll();
   }
+
+  if(isLandscape){
+    document.body.classList.add('landscape');
+  } else {
+    document.body.classList.remove('landscape');
+  }
+
+  handleLandscapeChange();
 
   document.querySelectorAll('.swiper-h').forEach((swiperEl) => {
     const isKicksOrSentra = swiperEl.classList.contains('KICKS') || swiperEl.classList.contains('SENTRA');
