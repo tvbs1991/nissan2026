@@ -439,6 +439,11 @@ header .mob-menu{
     width: 17vw;
     text-align: center;
 }
+
+.banner-info .BANNER .swiper-slide .banner-box .banner-content .banner-content-title{
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
 .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content .banner-content-subtitle{
   padding: 10px 30px;
   background: white;
@@ -471,6 +476,7 @@ header .mob-menu{
   padding: 10px 30px;
   background: white;
 }
+
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .play-btn{
     display: block;
     width: 35px;

@@ -241,8 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
       keyboard: false,
       mousewheel: false,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: swiperEl.querySelector('.swiper-button-next'),
+        prevEl: swiperEl.querySelector('.swiper-button-prev'),
       },
     });
   });
