@@ -71,17 +71,22 @@ function handleGoToTopClick() {
   }
 }
 
+
+
 function handleMobilePanelScroll() {
   const panelEl = document.querySelector('.swiper-wrapper-v');
   const headerEl = document.querySelector('header');
+  const goToTopBtn = document.querySelector('.go-to-top-btn');
   const scrollTop = panelEl ? panelEl.scrollTop : window.scrollY;
   const scrollingDown = scrollTop > mobileLastScrollTop;
   mobileLastScrollTop = scrollTop;
 
   if (scrollTop > 0) {
     if (headerEl) headerEl.classList.add('hide');
+    if (goToTopBtn) goToTopBtn.classList.add('show');
   } else {
     if (headerEl) headerEl.classList.remove('hide');
+    if (goToTopBtn) goToTopBtn.classList.remove('show');
   }
 
   if (panelEl) {
