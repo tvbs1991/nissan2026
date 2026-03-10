@@ -1,8 +1,12 @@
-@import"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&display=swap";
-@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Regular.otf");}
-/* @font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Italic.otf");}
-@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Light.otf");}
-@font-face{font-family:"Nissan Brand";src:url("../font/Nissan Brand Bold.otf");} */
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&display=swap";
+
+@font-face {
+    font-family: "Nissan Brand";
+    src: url("../font/Nissan Brand Regular.otf");
+}
+/* @font-face { font-family: "Nissan Brand"; src: url("../font/Nissan Brand Italic.otf"); } */
+/* @font-face { font-family: "Nissan Brand"; src: url("../font/Nissan Brand Light.otf"); } */
+/* @font-face { font-family: "Nissan Brand"; src: url("../font/Nissan Brand Bold.otf"); } */
 
 /* ==========================================================================
    全域重置與基礎設定
@@ -16,15 +20,15 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  font-family:"Nissan Brand","Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  min-width:320px;
-  overflow-x:hidden;
-  margin:0 auto;
-  background-color: #fff;
-  line-height: 1.5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Nissan Brand", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    min-width: 320px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    background-color: #fff;
+    line-height: 1.5;
 }
 
 body {
@@ -44,77 +48,36 @@ h1, h3 {
   margin-bottom: 1rem;
 }
 
-.w-80{
-  width: 80% !important;
-}
-.w-100 {
-  width: 100% !important;
-}
-.w-auto {
-  width: auto !important;
-}
-.h-100 {
-  height: 100% !important;
-}
-
-.f-bold {
-  font-weight: bold;
-}
-.f-10 {
-  font-size: 10px;
-}
-.f-12 {
-  font-size: 12px;
-}
-.f-14 {
-  font-size: 14px;
-}
-.f-16 {
-  font-size: 16px;
-}
-.f-18 {
-  font-size: 18px;
-}
-.f-20 {
-  font-size: 20px;
-}
-.f-22 {
-  font-size: 22px;
+.text-nissan{
+    font-family: "Nissan Brand" !important
 }
 
 
+.w-80   { width: 80% !important; }
+.w-100  { width: 100% !important; }
+.w-auto { width: auto !important; }
+.h-100  { height: 100% !important; }
 
-.d-flex {
-  display: flex;
-}
+.f-bold { font-weight: bold; }
+.f-10   { font-size: 10px; }
+.f-12   { font-size: 12px; }
+.f-14   { font-size: 14px; }
+.f-16   { font-size: 16px; }
+.f-18   { font-size: 18px; }
+.f-20   { font-size: 20px; }
+.f-22   { font-size: 22px; }
 
-.d-flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.d-flex-around {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.d-flex-evenly {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.d-flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.d-flex         { display: flex; }
+.d-flex-center  { display: flex; align-items: center; justify-content: center; }
+.d-flex-around  { display: flex; align-items: center; justify-content: space-around; }
+.d-flex-evenly  { display: flex; align-items: center; justify-content: space-evenly; }
+.d-flex-between { display: flex; align-items: center; justify-content: space-between; }
 
 
 /* ==========================================================================
    Header & Footer 佈局
    ========================================================================== */
+
 header {
   position: fixed;
   top: 0;
@@ -132,31 +95,30 @@ header.hide {
   visibility: hidden;
 }
 
-header .nav-bar{
-  padding: 40px 50px
+header .nav-bar {
+    padding: 40px 50px;
 }
-header .nav-bar .logo{
-  width: 71px;
-  height: 60px;
+
+header .nav-bar .logo {
+    width: 71px;
+    height: 60px;
 }
 header .nav-bar .logo,
 header .nav-bar a {
   cursor: pointer;
 }
 
-header .web-menu{
-
-}
-header .mob-menu{
-  display: none;
+header .mob-menu {
+    display: none;
 }
 
-.web-footer{
-  display: block;
-  width: 100%;
+.web-footer {
+    display: block;
+    width: 100%;
 }
-.mob-footer{
-  display: none;
+
+.mob-footer {
+    display: none;
 }
 
 .mob-menu-btn {
@@ -174,38 +136,45 @@ header .mob-menu{
     transform: scale(1.05);
 }
 
+/* --- Nav Hover --- */
+
 .nav-kicks-btn,
 .nav-sentra-btn {
-  position: relative;
-  display: inline-block;
-  padding: 8px 16px;
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 /* .nav-kicks-btn::before,
 .nav-sentra-btn::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #C41E3A;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #C41E3A;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
 
 .nav-kicks-btn:hover::before,
 .nav-sentra-btn:hover::before {
-  transform: scaleX(1);
+    transform: scaleX(1);
 } */
 
 .nav-kicks-btn:hover,
 .nav-sentra-btn:hover {
-  color: #C41E3A;
+    color: #C41E3A;
 }
+
+
+/* ==========================================================================
+   Sakura Canvas
+   ========================================================================== */
 
 #sakura-canvas {
     position: fixed;
@@ -213,10 +182,13 @@ header .mob-menu{
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 9999;
     display: block;
 }
+
+
+/* --- Go To Top Button --- */
 
 .go-to-top-btn {
     position: fixed;
@@ -247,90 +219,87 @@ header .mob-menu{
 /* ==========================================================================
    Swiper 核心組件 (垂直 V / 水平 H)
    ========================================================================== */
+
 .panel {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-.swiper-v, .swiper-h {
-  width: 100%;
-  height: 100%;
-  --swiper-navigation-size: 44px;
+.swiper-v,
+.swiper-h {
+    width: 100%;
+    height: 100%;
+    --swiper-navigation-size: 44px;
 }
 
 .swiper-v .swiper-wrapper {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .swiper-h .swiper-wrapper {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .swiper-slide {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
-/* --- Pagination 樣式客製化 --- */
+
+/* --- Swiper Pagination 通用 --- */
+
 .swiper-pagination {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  z-index: 10;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+
+/* --- BANNER Pagination --- */
+
+.BANNER .swiper-pagination {
+    bottom: 40px;
 }
 
 .BANNER .swiper-pagination-bullet {
-  width: 16px;
-  height: 16px;
-  background: unset;
-  background-image: url('../img/banner/dot.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  opacity: 1;
-  margin: 0 !important;
+    width: 16px;
+    height: 16px;
+    background: unset;
+    background-image: url('../img/banner/dot.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+    margin: 0 !important;
 }
+
 .BANNER .swiper-pagination-bullet-active {
-  background-image: url('../img/banner/dot-active.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.BANNER .swiper-pagination{
-  bottom: 40px;
+    background-image: url('../img/banner/dot-active.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
-.KICKS .swiper-pagination-bullet,
-.SENTRA .swiper-pagination-bullet {
-  width: 34px;
-  height: 34px;
-  padding: 8px;
-  text-align: center;
-  line-height: 34px;
-  font-size: 20px;
-  color: #9D8484CC;
-  background: none;
-  font-weight: bold;
-  opacity: 1;
-}
+/* --- KICKS / SENTRA Pagination --- */
 
-.SENTRA .swiper-pagination,
-.KICKS .swiper-pagination{
+.KICKS .swiper-pagination,
+.SENTRA .swiper-pagination {
     margin: auto;
     margin-top: 8px;
     justify-content: end;
@@ -338,97 +307,117 @@ header .mob-menu{
     position: absolute;
     bottom: -55px;
 }
-.KICKS .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #1F4B78;
-  border: 8px solid #FFFFFF;
-  box-sizing: content-box;
-  padding: 0;
+
+.KICKS .swiper-pagination-bullet,
+.SENTRA .swiper-pagination-bullet {
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 20px;
+    color: #9D8484CC;
+    background: none;
+    font-weight: bold;
+    opacity: 1;
 }
+
+.KICKS .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #1F4B78;
+    border: 8px solid #FFFFFF;
+    box-sizing: content-box;
+    padding: 0;
+}
+
+.SENTRA .swiper-pagination-bullet-active {
+    color: #fff;
+    background: #781F2B;
+    border: 8px solid #FFFFFF;
+    box-sizing: content-box;
+    padding: 0;
+}
+
+
+/* --- KICKS / SENTRA Navigation (PC 隱藏) --- */
 
 .KICKS .swiper-button-next,
 .KICKS .swiper-button-prev,
 .SENTRA .swiper-button-next,
 .SENTRA .swiper-button-prev {
-  display: none;
-}
-
-.SENTRA .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #781F2B;
-  border: 8px solid #FFFFFF;
-  box-sizing: content-box;
-  padding: 0;
+    display: none;
 }
 
 /* ==========================================================================
-   Nissan內容
+   Nissan 內容
    ========================================================================== */
 
-.kicks-font-color {
-  color: #1F4B78;
-}
-.sentra-font-color {
-  color: #781F2B;
+/* --- 共用字色 --- */
+
+.kicks-font-color  { color: #1F4B78; }
+.sentra-font-color { color: #781F2B; }
+
+
+/* ==========================================================================
+   Banner Section
+   ========================================================================== */
+
+.banner-info {
+    width: 100%;
+    height: 100%;
 }
 
-.banner-info{
-  width: 100%;
-  height: 100%;
-}
-.banner-info .banner-box{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
+.banner-info .banner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
 }
 
 .banner-info .banner-box .banner-pc { display: block; }
 .banner-info .banner-box .banner-m  { display: none; }
 
-.banner-info .deco{
+/* --- Deco 角落裝飾 --- */
+
+.banner-info .deco {
     position: absolute;
     width: 25px;
     height: auto;
     object-fit: cover;
     z-index: 2;
 }
-.banner-info .deco.deco01{
-  top: 10px;
-  left: 10px;
-  rotate: 180deg;
-  transform: scaleX(-1);
-}
-.banner-info .deco.deco02{
-  top: 10px;
-  right: 10px;
-    rotate: 180deg;
-}
-.banner-info .deco.deco03{
-  bottom: 10px;
-  left: 10px;
-  rotate: 0deg;
-}
-.banner-info .deco.deco04{
-  bottom: 10px;
-  right: 10px;
-  rotate: 0deg;
-  transform: scaleX(-1);
-}
-.banner-info .banner-box .banner-tag{
+
+.banner-info .deco.deco01 { top: 10px;    left: 10px;  rotate: 180deg; transform: scaleX(-1); }
+.banner-info .deco.deco02 { top: 10px;    right: 10px; rotate: 180deg; }
+.banner-info .deco.deco03 { bottom: 10px; left: 10px;  rotate: 0deg; }
+.banner-info .deco.deco04 { bottom: 10px; right: 10px; rotate: 0deg;   transform: scaleX(-1); }
+
+
+/* --- Banner Tag --- */
+
+.banner-info .banner-box .banner-tag {
     position: absolute;
     bottom: 50px;
     left: 50px;
 }
-.banner-info .BANNER .swiper-slide:first-child .banner-tag{
+
+.banner-info .BANNER .swiper-slide:first-child .banner-tag,
+.banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
     width: auto;
     height: 4vw;
 }
-.banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag{
-    width: auto;
-    height: 4vw;
+
+
+/* --- Banner Content Title 陰影 --- */
+
+.banner-info .BANNER .swiper-slide .banner-box .banner-content .banner-content-title {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
-.banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content{
+
+
+/* --- Banner Content (Slide 1: KICKS) --- */
+
+.banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content {
     position: absolute;
     color: #FFFFFF;
     transform: translateY(-50%);
@@ -440,11 +429,7 @@ header .mob-menu{
     text-align: center;
 }
 
-.banner-info .BANNER .swiper-slide .banner-box .banner-content .banner-content-title{
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-.banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content .banner-content-subtitle{
+.banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content .banner-content-subtitle {
   padding: 10px 30px;
   background: white;
 }
@@ -457,11 +442,14 @@ header .mob-menu{
     background-position: center;
     background-repeat: no-repeat;
         
-    animation: kicksBannerPlayBtnExpand 1.5s ease-out forwards, kicksBannerPlayBtnContract 1.5s 1.5s ease-in forwards infinite;
+    animation: kicksBannerPlayBtnExpand 1.5s ease-out forwards,
+               kicksBannerPlayBtnContract 1.5s 1.5s ease-in forwards infinite;
 }
 
 
-.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+/* --- Banner Content (Slide 2: SENTRA) --- */
+
+.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
     position: absolute;
     color: #FFFFFF;
     transform: translateY(-50%);
@@ -472,120 +460,72 @@ header .mob-menu{
     width: 17vw;
     text-align: center;
 }
-.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .banner-content-subtitle{
-  padding: 10px 30px;
-  background: white;
+
+.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .banner-content-subtitle {
+    padding: 10px 30px;
+    background: white;
 }
 
-.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .play-btn{
+.banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content .play-btn {
     display: block;
     width: 35px;
     height: 35px;
     background-image: url(../img/banner/sentra_view_btn.svg);
     background-size: 30px 30px;
     background-position: center;
-    background-repeat: no-repeat;        
-    animation: sentraBannerPlayBtnExpand 1.5s ease-out forwards, sentraBannerPlayBtnContract 1.5s 1.5s ease-in forwards infinite;
+    background-repeat: no-repeat;
+    animation: sentraBannerPlayBtnExpand 1.5s ease-out forwards,
+               sentraBannerPlayBtnContract 1.5s 1.5s ease-in forwards infinite;
 }
 
-.banner-info .banner-box .banner-content a{
-  margin-top: 20px;
-  cursor: pointer;
+.banner-info .banner-box .banner-content a {
+    margin-top: 20px;
+    cursor: pointer;
 }
+
+
+/* --- Banner Play Button Animations --- */
 
 @keyframes kicksBannerPlayBtnExpand {
-    0% {
-        background-image: url(../img/banner/kicks_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        background-image: url(../img/banner/kicks_view_btn_active.svg);
-        background-size: 30px 30px;
-
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        background-image: url(../img/banner/kicks_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
+    0%   { background-image: url(../img/banner/kicks_view_btn.svg);        transform: scale(1);   opacity: 1; }
+    50%  { background-image: url(../img/banner/kicks_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
+    100% { background-image: url(../img/banner/kicks_view_btn.svg);        transform: scale(1);   opacity: 1; }
 }
 
 @keyframes kicksBannerPlayBtnContract {
-    0% {
-        background-image: url(../img/banner/kicks_view_btn_active.svg);
-        background-size: 30px 30px;
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    50% {
-        background-image: url(../img/banner/kicks_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        background-image: url(../img/banner/kicks_view_btn_active.svg);
-        background-size: 30px 30px;
-        transform: scale(1.1);
-        opacity: 1;
-    }
+    0%   { background-image: url(../img/banner/kicks_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
+    50%  { background-image: url(../img/banner/kicks_view_btn.svg);        transform: scale(1);   opacity: 1; }
+    100% { background-image: url(../img/banner/kicks_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
 }
 
 @keyframes sentraBannerPlayBtnExpand {
-    0% {
-        background-image: url(../img/banner/sentra_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        background-image: url(../img/banner/sentra_view_btn_active.svg);
-        background-size: 30px 30px;
-
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        background-image: url(../img/banner/sentra_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
+    0%   { background-image: url(../img/banner/sentra_view_btn.svg);        transform: scale(1);   opacity: 1; }
+    50%  { background-image: url(../img/banner/sentra_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
+    100% { background-image: url(../img/banner/sentra_view_btn.svg);        transform: scale(1);   opacity: 1; }
 }
 
 @keyframes sentraBannerPlayBtnContract {
-    0% {
-        background-image: url(../img/banner/sentra_view_btn_active.svg);
-        background-size: 30px 30px;
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    50% {
-        background-image: url(../img/banner/sentra_view_btn.svg);
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        background-image: url(../img/banner/sentra_view_btn_active.svg);
-        background-size: 30px 30px;
-        transform: scale(1.1);
-        opacity: 1;
-    }
+    0%   { background-image: url(../img/banner/sentra_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
+    50%  { background-image: url(../img/banner/sentra_view_btn.svg);        transform: scale(1);   opacity: 1; }
+    100% { background-image: url(../img/banner/sentra_view_btn_active.svg); background-size: 30px 30px; transform: scale(1.1); opacity: 1; }
 }
 
 
+/* ==========================================================================
+   TVC Section
+   ========================================================================== */
+
 .tvc-info {
-  color: #A2A2A2;
-  font-size: 36px;
-  width: 100%;
-  height: 100%;
-  /*max-width: 1440px;*/
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-image: url('../img/tvc/bg_video-section.png');
-  background-size: cover;
-  position: relative;
+    color: #A2A2A2;
+    font-size: 36px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url('../img/tvc/bg_video-section.png');
+    background-size: cover;
+    position: relative;
 }
 
 .tvc-info .vector1 {
@@ -598,6 +538,7 @@ header .mob-menu{
     z-index: 0;
     rotate: 354.5deg;
 }
+
 .tvc-info .vector2 {
     position: absolute;
     top: 200px;
@@ -609,20 +550,22 @@ header .mob-menu{
 }
 
 .tvc-info .tvc-info-column {
-  width: 500px;
-}
-.tvc-info .tvc-info-column .tvc-kicks-title{
-  width: 368px;
-  height: 30px;
-  margin: auto;
-}
-.tvc-info .tvc-info-column .tvc-sentra-title{
-  width: 390px;
-  height: 30px;
-  margin: auto;
+    width: 500px;
 }
 
-.tvc-info .tvc-kicks-img{
+.tvc-info .tvc-info-column .tvc-kicks-title {
+    width: 368px;
+    height: 30px;
+    margin: auto;
+}
+
+.tvc-info .tvc-info-column .tvc-sentra-title {
+    width: 390px;
+    height: 30px;
+    margin: auto;
+}
+
+.tvc-info .tvc-kicks-img {
     position: relative;
     margin-top: 40px;
     border: 15px solid #F6E9EB;
@@ -635,15 +578,16 @@ header .mob-menu{
     background-size: 200%;
 }
 
-.tvc-info .tvc-kicks-img:hover{  
-  box-shadow: 0px 0px 25px 0px #FFAFBB;
-}
-.tvc-info .tvc-kicks-img img{
-  width: 100%;
-  height: auto;
+.tvc-info .tvc-kicks-img:hover {
+    box-shadow: 0px 0px 25px 0px #FFAFBB;
 }
 
-.tvc-info .tvc-sentra-img{  
+.tvc-info .tvc-kicks-img img {
+    width: 100%;
+    height: auto;
+}
+
+.tvc-info .tvc-sentra-img {
     position: relative;
     margin-top: 40px;
     border: 15px solid #E9EEF6;
@@ -656,12 +600,12 @@ header .mob-menu{
     background-size: 200%;
 }
 
-.tvc-info .tvc-sentra-img:hover{  
-  box-shadow: 0px 0px 25px 0px #75A8F9;
+.tvc-info .tvc-sentra-img:hover {
+    box-shadow: 0px 0px 25px 0px #75A8F9;
 }
 
-.tvc-info .play-box{
-  position: absolute;
+.tvc-info .play-box {
+    position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
@@ -670,7 +614,8 @@ header .mob-menu{
     justify-content: center;
     cursor: pointer;
 }
-.tvc-info .play-box .play-btn{
+
+.tvc-info .play-box .play-btn {
     width: 60px;
     height: 60px;
     color: #717171;
@@ -685,7 +630,8 @@ header .mob-menu{
     padding-left: 4px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.tvc-info .play-box:hover .play-btn{
+
+.tvc-info .play-box:hover .play-btn {
     transform: scale(1.2);
     box-shadow: 0 0 0 14px #FFFFFF90;
 }
@@ -696,90 +642,42 @@ header .mob-menu{
     filter: invert(54%) sepia(1%) saturate(234%) hue-rotate(189deg) brightness(95%) contrast(92%);
 }
 
-.kicks-info,
-.sentra-info{
-  width: 100%;
-  height: 100%;
-  /*max-width: 1440px;*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  position: relative;
-}
-.kicks-info{
-  /* background-image: url('../img/kicks/bg.png'); */
-  background: #FFF8F9;
-}
-.kicks-info .color-area01 {
-background: #FFF4F5;
-    height: 100%;
-    width: 6%;
-    position: absolute;
-    left: 0%;
-    z-index: 0;
-}
-.kicks-info .color-area02 {
-background: #F6E9EB;
-    height: 100%;
-    width: 1.5%;
-    position: absolute;
-    left: 3%;
-    z-index: 0;
-}
-.kicks-info .color-area03 {
-    background: #FFF4F5;
-    height: 100%;
-    width: 42%;
-    position: absolute;
-    right: 5%;
-    z-index: 0;
-}
-.kicks-info .color-area04 {
-    background: #F6E9EB;
-    height: 100%;
-    width: 40%;
-    position: absolute;
-    right: 4%;
-    z-index: 0;
-}
-.kicks-info .deco01 {
-    position: absolute;
-    bottom: 100px;
-    left: -100px;
-    width: 357px;
-    height: auto;
-    object-fit: cover;
-    z-index: 0;
-}
-.kicks-info .deco02 {
-    position: absolute;
-    top: -120px;
-    left: 300px;
-    width: 240px;
-    height: auto;
-    object-fit: cover;
-    z-index: 0;
 
+/* ==========================================================================
+   KICKS Section
+   ========================================================================== */
+
+.kicks-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF8F9;
+    background-size: cover;
+    position: relative;
 }
-.kicks-info .deco05 {
-position: absolute;
-    top: 30%;
-    right: -30px;
-    width: 350px;
-    height: auto;
-    object-fit: cover;
-    z-index: 2;
-}
-.kicks-info .kicks-next-btn{
+
+.kicks-info .color-area01 { background: #FFF4F5; height: 100%; width: 6%;   position: absolute; left: 0%;  z-index: 0; }
+.kicks-info .color-area02 { background: #F6E9EB; height: 100%; width: 1.5%; position: absolute; left: 3%;  z-index: 0; }
+.kicks-info .color-area03 { background: #FFF4F5; height: 100%; width: 42%;  position: absolute; right: 5%; z-index: 0; }
+.kicks-info .color-area04 { background: #F6E9EB; height: 100%; width: 40%;  position: absolute; right: 4%; z-index: 0; }
+
+.kicks-info .deco01 { position: absolute; bottom: 100px; left: -100px; width: 357px; height: auto; object-fit: cover; z-index: 0; }
+.kicks-info .deco02 { position: absolute; top: -120px;   left: 300px;  width: 240px; height: auto; object-fit: cover; z-index: 0; }
+.kicks-info .deco05 { position: absolute; top: 30%;      right: -30px; width: 350px; height: auto; object-fit: cover; z-index: 2; }
+
+.kicks-info .kicks-next-btn {
     color: #616161;
     width: 300px;
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 17px 0px;
+    padding: 17px 0;
     box-shadow: 0px 0px 10px 0px #0000000D;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -787,100 +685,61 @@ position: absolute;
     background: #FFFFFF;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 50;
-    left: 50%;
-    transform: translateX(-50%);
     text-decoration: none;
-    letter-spacing: 5px
+    letter-spacing: 5px;
 }
-.kicks-info .kicks-next-btn:hover{
+
+.kicks-info .kicks-next-btn:hover {
     background: #F2F2F2;
     box-shadow: 0px 0px 15px 0px #0000001A;
     transform: translateX(-50%) translateY(-2px);
 }
-.kicks-info .kicks-next-btn span{
-    margin: 0 10px;
-}
-.kicks-info .kicks-next-btn img{
+
+.kicks-info .kicks-next-btn span { margin: 0 10px; }
+
+.kicks-info .kicks-next-btn img {
     height: 14px;
     width: auto;
     filter: invert(54%) sepia(1%) saturate(234%) hue-rotate(189deg) brightness(95%) contrast(92%);
     rotate: 180deg;
 }
 
-.sentra-info{
-  /* background-image: url('../img/sentra/bg.png'); */
-  background: #FAFCFF;
-}
-.sentra-info .color-area01 {
-    background: #F2F7FE;
+
+/* ==========================================================================
+   SENTRA Section
+   ========================================================================== */
+
+.sentra-info {
+    width: 100%;
     height: 100%;
-    width: 42%;
-    position: absolute;
-    left: 5%;
-    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFCFF;
+    background-size: cover;
+    position: relative;
 }
-.sentra-info .color-area02 {
-    background: #E9EEF6;
-    height: 100%;
-    width: 40%;
-    position: absolute;
-    left: 4%;
-    z-index: 0;
-}
-.sentra-info .color-area03 {
-    background: #F2F7FE;
-    height: 100%;
-    width: 6%;
-    position: absolute;
-    right: 0%;
-    z-index: 0;
-}
-.sentra-info .color-area04 {
-  background: #E9EEF6;
-    height: 100%;
-    width: 1.5%;
-    position: absolute;
-    right: 3%;
-    z-index: 0;
-}
-.sentra-info .deco04 {
-    position: absolute;
-    top: 180px;
-    left: 0;
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-    z-index: 2;
-}
-.sentra-info .deco02 {
-    position: absolute;
-    top: -100px;
-    right: 100px;
-    width: 240px;
-    height: auto;
-    object-fit: cover;
-    z-index: 0;
-    rotate: 180deg;
-}
-.sentra-info .deco05 {
-    position: absolute;
-    bottom: -100px;
-    right: 30%;
-    width: 350px;
-    height: auto;
-    object-fit: cover;
-    z-index: 0;
-    rotate: 180.5deg;
-}
-.sentra-info .sentra-previous-btn{
+
+.sentra-info .color-area01 { background: #F2F7FE; height: 100%; width: 42%;  position: absolute; left: 5%;  z-index: 0; }
+.sentra-info .color-area02 { background: #E9EEF6; height: 100%; width: 40%;  position: absolute; left: 4%;  z-index: 0; }
+.sentra-info .color-area03 { background: #F2F7FE; height: 100%; width: 6%;   position: absolute; right: 0%; z-index: 0; }
+.sentra-info .color-area04 { background: #E9EEF6; height: 100%; width: 1.5%; position: absolute; right: 3%; z-index: 0; }
+
+.sentra-info .deco04 { position: absolute; top: 180px;    left: 0;      width: 300px; height: auto; object-fit: cover; z-index: 2; }
+.sentra-info .deco02 { position: absolute; top: -100px;   right: 100px; width: 240px; height: auto; object-fit: cover; z-index: 0; rotate: 180deg; }
+.sentra-info .deco05 { position: absolute; bottom: -100px; right: 30%;  width: 350px; height: auto; object-fit: cover; z-index: 0; rotate: 180.5deg; }
+
+.sentra-info .sentra-previous-btn {
     color: #616161;
     width: 300px;
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 17px 0px;
+    padding: 17px 0;
     box-shadow: 0px 0px 10px 0px #0000000D;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -888,27 +747,30 @@ position: absolute;
     background: #FFFFFF;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 50;
-    left: 50%;
-    transform: translateX(-50%);
     text-decoration: none;
-     letter-spacing: 5px
+    letter-spacing: 5px;
 }
-.sentra-info .sentra-previous-btn:hover{
+
+.sentra-info .sentra-previous-btn:hover {
     background: #F2F2F2;
     box-shadow: 0px 0px 15px 0px #0000001A;
     transform: translateX(-50%) translateY(2px);
 }
-.sentra-info .sentra-previous-btn span{
-    margin: 0 10px;
-}
-.sentra-info .sentra-previous-btn img{
+
+.sentra-info .sentra-previous-btn span { margin: 0 10px; }
+
+.sentra-info .sentra-previous-btn img {
     height: 14px;
     width: auto;
     filter: invert(54%) sepia(1%) saturate(234%) hue-rotate(189deg) brightness(95%) contrast(92%);
 }
 
 
-.car-slide-box{
+/* ==========================================================================
+   Car Slide Box (KICKS / SENTRA 共用)
+   ========================================================================== */
+
+.car-slide-box {
     width: 100%;
     height: 100%;
     display: flex;
@@ -916,7 +778,8 @@ position: absolute;
     align-items: center;
     justify-content: center;
 }
-.KICKS .car-slide-box .car-info-box{
+
+.KICKS .car-slide-box .car-info-box {
     width: 440px;
     margin-right: 60px;
     display: flex;
@@ -925,7 +788,8 @@ position: absolute;
     justify-content: center;
     font-size: 36px;
 }
-.SENTRA .car-slide-box .car-info-box{
+
+.SENTRA .car-slide-box .car-info-box {
     width: 440px;
     margin-left: 60px;
     display: flex;
@@ -935,92 +799,109 @@ position: absolute;
     font-size: 36px;
 }
 
-.car-slide-box .car-info-box img{
-  width: 235px;
-  height: auto;
-}
-.car-slide-box .kicks-font-color{
-  letter-spacing: 10px;
-  line-height: 1; 
-}
-.car-slide-box .sentra-font-color{
-  letter-spacing: 5px;
-  line-height: 1;
+.car-slide-box .car-info-box img {
+    width: 235px;
+    height: auto;
 }
 
-.car-slide-box .car-info-box .car-feature-title{
-  font-size: 32px;
-  padding: 5px 30px;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 25px 0px #0000000D;
-  margin: 40px 0px 15px 0px;
-  letter-spacing: 30%;
-  color: #616161;
-  font-family: "Noto Serif TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+.car-slide-box .kicks-font-color {
+    letter-spacing: 10px;
+    line-height: 1;
 }
-.car-slide-box .car-info-box .car-feature-directions{
-  font-size: 20px;
-  color: #616161;
-  height: 100px;
-  letter-spacing: 10%;
-  width: 100%;
+
+.car-slide-box .sentra-font-color {
+    letter-spacing: 5px;
+    line-height: 1;
 }
-.car-slide-box .car-info-box .car-feature-directions ul{
+
+.car-slide-box .car-info-box .car-feature-title {
+    font-size: 32px;
+    padding: 5px 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px 0px #0000000D;
+    margin: 40px 0 15px;
+    letter-spacing: 30%;
+    color: #616161;
+    font-family: "Noto Serif TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+.car-slide-box .car-info-box .car-feature-directions {
+    font-size: 20px;
+    color: #616161;
+    height: 100px;
+    letter-spacing: 10%;
+    width: 100%;
+}
+
+.car-slide-box .car-info-box .car-feature-directions ul {
     letter-spacing: 5%;
     padding-left: 40px;
 }
 
-.car-slide-box .car-img-box{
-  width: 560px;
-  height: 420px;
-  position: relative;
+.car-slide-box .car-img-box {
+    width: 560px;
+    height: 420px;
+    position: relative;
 }
+
+
+/* --- Pagination Anchor --- */
 
 .car-slide-box.pagination-anchor {
     position: absolute;
     bottom: 0;
     z-index: 1;
 }
+
 .car-slide-box.pagination-anchor .car-img-box {
-  height: 420px;
-  justify-content: flex-end;
+    height: 420px;
+    justify-content: flex-end;
 }
 
-.price-info{
+
+/* ==========================================================================
+   Price Section
+   ========================================================================== */
+
+.price-info {
     width: 100%;
     height: 100%;
-    /*max-width: 1440px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     background: white;
 }
-.price-info .item-colum{
+.price-info .item-colum {
     height: 600px;
 }
-.price-info .price-box{
+
+.price-info .price-box {
     width: 480px;
     font-size: 40px;
     padding: 15px;
-    margin: 20px 20px 0px 20px;
+    margin: 20px 20px 0;
 }
-.price-info .price-box:hover{  
-  box-shadow: 0px 0px 25px 0px #0000001A;
-  border-radius: 15px;
+
+.price-info .price-box:hover {
+    box-shadow: 0px 0px 25px 0px #0000001A;
+    border-radius: 15px;
 }
-.price-info .price-box img{
-  width: auto;
-  height: 160px;
-  margin: auto;
+
+.price-info .price-box img {
+    width: auto;
+    height: 160px;
+    margin: auto;
 }
-.price-info .price-box .car-name{
-  text-align: center;
-  color: #7B7B7B;
-  margin: 0 0 27px;
-  letter-spacing: 10px;
-  line-height: 1;
+
+.price-info .price-box .car-name {
+    text-align: center;
+    color: #7B7B7B;
+    margin: 0 0 27px;
+    letter-spacing: 10px;
+    line-height: 1;
 }
-.price-info .price-box table{
+
+.price-info .price-box table {
     width: 100%;
     font-size: 20px;
     background-color: #F7F7F7;
@@ -1029,41 +910,49 @@ position: absolute;
     text-align: center;
     color: #616161;
 }
+
 .price-info .price-box table.mobile-table {
     display: none;
 }
+
 .price-info .price-box table.web-table .special-offer {
     font-size: 10px;
-    color: #89610A; 
+    color: #89610A;
     margin-left: 3px;
     background: #F3E1B8;
     padding: 2px 4px;
 }
-.price-info .pdf-download-box{
-  font-size: 14px;
-  height: 44px;
-  width: 450px;
-  margin: 0 35px;
-  background: #FBFBFB;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+.price-info .pdf-download-box {
+    font-size: 14px;
+    height: 44px;
+    width: 450px;
+    margin: 0 35px;
+    background: #FBFBFB;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.price-info .pdf-download-box:hover{
-  background: #F2F2F2;
+
+.price-info .pdf-download-box:hover {
+    background: #F2F2F2;
 }
-.price-info .pdf-download-box a{
+
+.price-info .pdf-download-box a {
     width: 100%;
     color: #616161;
     font-size: 14px;
     text-decoration-line: none;
 }
-.price-info .pdf-download-box:hover a{
-  text-decoration-line: underline;
+
+.price-info .pdf-download-box:hover a {
+    text-decoration-line: underline;
 }
-.price-info .pdf-download-box img{
-  width: auto;
-  height: 24px;
-  margin-left: 5px;
+
+.price-info .pdf-download-box img {
+    width: auto;
+    height: 24px;
+    margin-left: 5px;
 }
+
 .price-info .reserve-btn {
     width: 400px;
     height: 125px;
@@ -1077,10 +966,14 @@ position: absolute;
     position: relative;
     z-index: 1;
 }
+
 .price-info .reserve-btn::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('../img/icon/reserve_btn_hover.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -1089,11 +982,12 @@ position: absolute;
     transition: opacity 0.3s ease;
     z-index: -1;
 }
+
 .price-info .reserve-btn:hover::after {
     opacity: 1;
 }
 
-.price-info .copyright{
+.price-info .copyright {
     width: 100%;
     height: 140px;
     font-size: 14px;
@@ -1102,54 +996,56 @@ position: absolute;
     background-color: #FAFAFA;
 }
 
+
 /* ==========================================================================
    Mobile Menu Overlay
    ========================================================================== */
+
 .mob-menu-overlay {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 .mob-menu-overlay.show {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mob-menu-overlay.hide {
-  opacity: 0;
-  visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .mob-menu-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .mob-menu-header {
-  padding: 35px 35px;
-  flex-shrink: 0;
+    padding: 35px;
+    flex-shrink: 0;
 }
 
 .mob-menu-header .logo {
-  width: 71px;
-  height: 60px;
+    width: 71px;
+    height: 60px;
 }
 
 .mob-menu-header .popup-close {
-  position: static;
-  top: unset;
-  right: unset;
+    position: static;
+    top: unset;
+    right: unset;
 }
 
 .mob-menu-nav {
@@ -1169,40 +1065,43 @@ position: absolute;
 }
 
 .mob-menu-nav a:hover {
-  color: #C41E3A;
+    color: #C41E3A;
 }
 
+
 /* ==========================================================================
-   Popup Modal 彈窗
+   Popup Modal
    ========================================================================== */
+
 .popup-overlay {
-  background-image: url(../img/tvc/bg_video-section.png);
-  background-size: cover;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-image: url(../img/tvc/bg_video-section.png);
+    background-size: cover;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .popup-overlay.show {
-  opacity: 1;
-  visibility: visible;
-  animation: popupFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 1;
+    visibility: visible;
+    animation: popupFadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .popup-overlay.hide {
-  opacity: 0;
-  visibility: hidden;
-  animation: popupFadeOut 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+    visibility: hidden;
+    animation: popupFadeOut 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .popup-content {
@@ -1214,18 +1113,18 @@ position: absolute;
 }
 
 .popup-close {
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 65px;
-  height: 65px;
-  background: url('../img/icon/popup_close_btn.svg');
-  background-size: cover;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  z-index: 10001;
-  transition: all 0.3s ease;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 65px;
+    height: 65px;
+    background: url('../img/icon/popup_close_btn.svg');
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1233,166 +1132,113 @@ position: absolute;
 }
 
 .popup-close:hover {
-  filter: brightness(1.1);
-  transform: scale(1.05);
+    filter: brightness(1.1);
+    transform: scale(1.05);
 }
 
 .popup-close svg {
-  display: none;
+    display: none;
 }
 
 @keyframes popupFadeIn {
-  0% {
-    opacity: 0;
-    transform: translate(-100px, 100px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
+    0%   { opacity: 0; transform: translate(-100px, 100px) scale(0.8); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1); }
 }
 
-/* 彈窗淡出動畫 - 從右上往左下 */
 @keyframes popupFadeOut {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-100px, 100px) scale(0.8);
-  }
+    0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+    100% { opacity: 0; transform: translate(-100px, 100px) scale(0.8); }
 }
+
+
+/* ==========================================================================
+   Fade In 動畫
+   ========================================================================== */
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInUp2 {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInDown2 {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInLeft2 {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInRight2 {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-.fade-in { animation: fadeIn 1.7s ease-in forwards; }
-.fade-in-up { animation: fadeInUp 1.7s ease-in forwards; }
-.fade-in-up2 { animation: fadeInUp2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
-.fade-in-down { animation: fadeInDown 1.7s ease-in forwards; }
-.fade-in-down2 { animation: fadeInDown2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
-.fade-in-left { animation: fadeInLeft 1.7s ease-in forwards; }
-.fade-in-left2 { animation: fadeInLeft2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
-.fade-in-right { animation: fadeInRight 1.7s ease-in forwards; }
-.fade-in-right2 { animation: fadeInRight2 1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
+@keyframes fadeInUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp2 {
+    0%   { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    0%   { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown2 {
+    0%   { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    0%   { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInLeft2 {
+    0%   { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    0%   { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight2 {
+    0%   { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in        { animation: fadeIn        1.7s ease-in forwards; }
+.fade-in-up     { animation: fadeInUp      1.7s ease-in forwards; }
+.fade-in-up2    { animation: fadeInUp2     1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
+.fade-in-down   { animation: fadeInDown    1.7s ease-in forwards; }
+.fade-in-down2  { animation: fadeInDown2   1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
+.fade-in-left   { animation: fadeInLeft    1.7s ease-in forwards; }
+.fade-in-left2  { animation: fadeInLeft2   1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
+.fade-in-right  { animation: fadeInRight   1.7s ease-in forwards; }
+.fade-in-right2 { animation: fadeInRight2  1.7s cubic-bezier(1, -0.13, 0.83, -0.17) forwards; }
 
 
 /* ======================================================
    平板版 (Tablet)：768px - 1179px
    ====================================================== */
 @media screen and (max-width: 1179px) {
-    .swiper-v .swiper-wrapper-v{
-      overflow-y: auto;
-    }
-    .swiper-v .swiper-wrapper-v .mob-slide{
-        min-height: 100%;
-        height: auto;
-    }
-    .swiper-v .swiper-wrapper-v .mob-slide-banner{
-        height: 100%;
-    }
 
+    /* --- Swiper --- */
+    .swiper-v .swiper-wrapper-v { overflow-y: auto; }
+    .swiper-v .swiper-wrapper-v .mob-slide { min-height: 100%; height: auto; }
+    .swiper-v .swiper-wrapper-v .mob-slide-banner { height: 100%; }
+
+    /* --- Banner --- */
     .banner-info .banner-box .banner-tag {
         bottom: 50px;
         left: 50px;
     }
-
     .banner-info .BANNER .swiper-slide:first-child .banner-tag,
     .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
         height: 5vh;
     }
     .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
-    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
         top: 25%;
         right: 0;
         left: 0;
         width: 200px;
     }
     .landscape .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
-    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
         position: absolute;
         color: #FFFFFF;
         transform: translateY(-50%);
@@ -1404,227 +1250,131 @@ position: absolute;
         text-align: center;
     }
 
+    /* --- TVC --- */
+    .tvc-info { flex-direction: column; }
+    .tvc-info .tvc-info-column { margin: 30px auto; }
+    .tvc-info .tvc-kicks-img,
+    .tvc-info .tvc-sentra-img { margin: 30px auto 0; }
 
-    .tvc-info{
-      flex-direction: column;
-    }
-
-    .tvc-info .tvc-info-column {
-        margin: 30px auto;
-    }
-    .tvc-info .tvc-kicks-img, .tvc-info .tvc-sentra-img {
-        margin: 30px auto 0;
-    }
-
+    /* --- Car Slide --- */
     .car-slide-box {
-      flex-direction: column;
-      height: 100%;
-      padding: 15% 0;
+        flex-direction: column;
+        height: 100%;
+        padding: 15% 0;
     }
-
-    /* .KICKS .swiper-pagination,
-    .SENTRA .swiper-pagination{
-      bottom: -30px;
-    } */
     .landscape .KICKS .swiper-pagination,
-    .landscape .SENTRA .swiper-pagination{
-      bottom: -55px;
-    }
-
-
-    .SENTRA .car-slide-box .car-info-box, 
-    .KICKS .car-slide-box .car-info-box{
+    .landscape .SENTRA .swiper-pagination { bottom: -55px; }
+    .SENTRA .car-slide-box .car-info-box,
+    .KICKS .car-slide-box .car-info-box {
         margin-bottom: 50px;
         margin-right: auto;
         margin-left: auto;
         width: 560px;
         min-height: 409px;
     }
-
-    .car-slide-box .car-info-box .car-feature-directions ul{
+    .car-slide-box .car-info-box .car-feature-directions ul {
         white-space: nowrap;
         padding-left: 20px;
     }
 
-    .kicks-info .color-area01 {
-        width: 100%;
-        top: 0%;
-        left: 0;
-    }
-    .kicks-info .color-area02 {
-        height: 2%;
-        width: 100%;
-        top: 3%;
-        left: 0;
-    }
-    .kicks-info .color-area03 {
-        height: 42%;
-        width: 100%;
-        bottom: 5%;
-        right: 0;
-    }
-    .kicks-info .color-area04 {
-        height: 43%;
-        width: 100%;
-        bottom: 2%;
-        right: 0;
-    }
-    .kicks-info .deco01 {
-        left: -150px;
-        width: 330px;
-    }
-    .kicks-info .deco02 {
-        left: 100px;
-    }
-    .kicks-info .deco05 {
-        right: -155px;
-        width: 300px;
-        top: 60%;
-    }
+    /* --- KICKS Colors & Decos --- */
+    .kicks-info .color-area01 { width: 100%; top: 0%; left: 0; }
+    .kicks-info .color-area02 { height: 2%; width: 100%; top: 3%; left: 0; }
+    .kicks-info .color-area03 { height: 42%; width: 100%; bottom: 5%; right: 0; }
+    .kicks-info .color-area04 { height: 43%; width: 100%; bottom: 2%; right: 0; }
+    .kicks-info .deco01 { left: -150px; width: 330px; }
+    .kicks-info .deco02 { left: 100px; }
+    .kicks-info .deco05 { right: -155px; width: 300px; top: 60%; }
 
+    /* --- SENTRA Colors & Decos --- */
+    .sentra-info .color-area01 { height: 6%; width: 100%; top: 0%; left: 0; }
+    .sentra-info .color-area02 { height: 2%; width: 100%; top: 3%; left: 0; }
+    .sentra-info .color-area03 { height: 42%; width: 100%; bottom: 5%; right: 0; }
+    .sentra-info .color-area04 { height: 43%; width: 100%; bottom: 2%; right: 0; }
+    .sentra-info .deco04 { top: 41%; left: -15%; }
+    .sentra-info .deco05 { right: 20%; }
 
-    .sentra-info .color-area01 {
-        height: 6%;
-        width: 100%;
-        top: 0%;
-        left: 0;
-    }
-    .sentra-info .color-area02 {
-        height: 2%;
-        width: 100%;
-        top: 3%;
-        left: 0;
-    }
-    .sentra-info .color-area03 {
-        height: 42%;
-        width: 100%;
-        bottom: 5%;
-        right: 0;
-    }
-    .sentra-info .color-area04 {
-        height: 43%;
-        width: 100%;
-        bottom: 2%;
-        right: 0;
-    }
-    .sentra-info .deco04 {
-        top: 41%;
-        left: -15%;
-    }
-    .sentra-info .deco02 {
-      /* nothing */
-    }
-    .sentra-info .deco05 {
-        right: 20%;
-    }
-
+    /* --- KICKS / SENTRA Swiper Navigation --- */
     .KICKS .swiper-button-next,
     .KICKS .swiper-button-prev,
     .SENTRA .swiper-button-next,
     .SENTRA .swiper-button-prev {
-      display: block;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
+        display: block;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        top: 70%;
     }
-
     .KICKS .swiper-button-next,
+    .SENTRA .swiper-button-next { right: 10%; }
     .KICKS .swiper-button-prev,
-    .SENTRA .swiper-button-next,
-    .SENTRA .swiper-button-prev{
-      top: 70%;
-    }
-
-    .KICKS .swiper-button-next,
-    .SENTRA .swiper-button-next{
-        right: 10%;
-    }
-    .KICKS .swiper-button-prev,
-    .SENTRA .swiper-button-prev{
-        left: 10%;
-    }
-
-
+    .SENTRA .swiper-button-prev { left: 10%; }
     .KICKS .swiper-button-next::after,
     .KICKS .swiper-button-prev::after,
     .SENTRA .swiper-button-next::after,
     .SENTRA .swiper-button-prev::after {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 40px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: invert(70%) sepia(0%) saturate(0%) brightness(90%);
+        content: '';
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: invert(70%) sepia(0%) saturate(0%) brightness(90%);
     }
-
     .KICKS .swiper-button-next::after,
-    .SENTRA .swiper-button-next::after {
-      background-image: url('../img/icon/fi-rr-angle-right.svg');
-    }
-
+    .SENTRA .swiper-button-next::after { background-image: url('../img/icon/fi-rr-angle-right.svg'); }
     .KICKS .swiper-button-prev::after,
-    .SENTRA .swiper-button-prev::after {
-      background-image: url('../img/icon/fi-rr-angle-left.svg');
-    }
+    .SENTRA .swiper-button-prev::after { background-image: url('../img/icon/fi-rr-angle-left.svg'); }
 
-    .kicks-info .kicks-next-btn{
+    /* --- Section Buttons --- */
+    .kicks-info .kicks-next-btn {
         width: 200px;
         bottom: 10px;
         border-radius: 10px;
         padding: 10px 0;
     }
-    .sentra-info .sentra-previous-btn{
+    .sentra-info .sentra-previous-btn {
         width: 200px;
         top: 10px;
         border-radius: 10px;
         padding: 10px 0;
     }
-    .sentra-info .car-slide-box {
-      flex-direction: column-reverse;
-    }
+    .sentra-info .car-slide-box { flex-direction: column-reverse; }
 
-    .price-info .item-colum{
-      height: 100%;
-    }
-    .price-info .price-box{
-      width: auto;
-    }
-    .price-info .pdf-download-box{
+    /* --- Price --- */
+    .price-info .item-colum { height: 100%; }
+    .price-info .price-box { width: auto; }
+    .price-info .pdf-download-box {
         width: 278px;
         margin: auto;
     }
-
-    .price-info .price-box table.web-table {
-        display: none;
-    }
+    .price-info .price-box table.web-table { display: none; }
     .price-info .price-box table.mobile-table {
         position: relative;
         display: table;
         width: 278px;
-        border-spacing: 0px;
+        border-spacing: 0;
         border-style: solid;
         border-color: #F7F7F7;
         border-width: 10px 20px;
         font-size: 18px;
     }
-    .price-info .price-box table.mobile-table tr td:first-child{
+    .price-info .price-box table.mobile-table tr td:first-child {
         width: 45%;
         border-right: 1px solid #E2E2E2;
-        padding-left: 5px;
-        padding: 2px 0;
+        padding: 2px 0 2px 5px;
     }
-    .price-info .price-box table.mobile-table tr td:nth-child(2){
+    .price-info .price-box table.mobile-table tr td:nth-child(2) {
         width: 55%;
         text-align: right;
         font-size: 16px;
         padding-right: 10px;
     }
     .price-info .price-box table.mobile-table .special-offer {
-      position: absolute;
+        position: absolute;
         width: 32px;
         top: -3px;
         left: -29px;
@@ -1634,10 +1384,7 @@ position: absolute;
         padding: 4px;
         line-height: 1.3;
     }
-
-    .price-info .reserve-btn{
-      margin: 60px 0;
-    }
+    .price-info .reserve-btn { margin: 60px 0; }
 
 }
 
@@ -1647,59 +1394,42 @@ position: absolute;
    ====================================================== */
 @media screen and (max-width: 767px) {
 
-    header .nav-bar {
-        padding: 35px 35px;
-    }
+    /* --- Header --- */
+    header .nav-bar { padding: 35px 35px; }
+    header .web-menu { display: none; }
+    header .mob-menu { display: block; }
 
-    header .web-menu{
-      display: none;
-
-    }
-    header .mob-menu{
-      display: block;
-    }
-
-    .banner-info .deco {
-      width: 18px;
-    }
-
+    /* --- Banner --- */
+    .banner-info .deco { width: 18px; }
     .banner-info .banner-box .banner-pc { display: none; }
     .banner-info .banner-box .banner-m  { display: block; }
-
     .banner-info .BANNER .swiper-slide:first-child .banner-tag,
-    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
-        height: 30px;
-    }
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag { height: 30px; }
     .banner-info .banner-box .banner-tag {
         bottom: 30px;
         left: 30px;
     }
-
     .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
-    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content{
+    .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
         top: 35%;
         right: 0;
         left: 0;
         width: 65vw;
         max-width: 290px;
     }
+    .banner-info .banner-box .banner-content a { font-size: 16px; }
 
-    .banner-info .banner-box .banner-content a{
-      font-size: 16px;
-    }
-
+    /* --- Popup --- */
     .popup-overlay .popup-close {
         position: fixed;
         top: 35px;
         right: 35px;
     }
 
-
-    .tvc-info .tvc-info-column{
-      width: 80%;
-    }
+    /* --- TVC --- */
+    .tvc-info .tvc-info-column { width: 80%; }
     .tvc-info .tvc-info-column .tvc-kicks-title,
-    .tvc-info .tvc-info-column .tvc-sentra-title{
+    .tvc-info .tvc-info-column .tvc-sentra-title {
         width: 100%;
         height: auto;
         margin: auto;
@@ -1733,55 +1463,29 @@ position: absolute;
         height: 40px;
         box-shadow: 0 0 0 5px #FFFFFF80;
     }
-    .tvc-info .play-btn img {
-        width: 11px;
-    }
+    .tvc-info .play-btn img { width: 11px; }
 
-
+    /* --- KICKS --- */
     .KICKS .car-slide-box .car-info-box {
         width: 100%;
         margin-bottom: 20px;
-        margin-right: 0px;
+        margin-right: 0;
     }
     .KICKS .swiper-pagination,
     .SENTRA .swiper-pagination {
         bottom: -55px;
         justify-content: center;
     }
+    .kicks-info .deco01 { left: -100px; top: 35%; width: 189px; rotate: -30deg; }
+    .kicks-info .deco02 { left: 50px; top: -50px; width: 130px; }
+    .kicks-info .deco05 { right: -100px; width: 189px; top: 80%; }
 
-    .kicks-info .deco01 {
-        left: -100px;
-        top: 35%;
-        width: 189px;
-        rotate: -30deg;
-    }
-    .kicks-info .deco02 {
-        left: 50px;
-        top: -50px;
-        width: 130px;
-    }
-    .kicks-info .deco05 {
-        right: -100px;
-        width: 189px;
-        top: 80%;
-    }
-    .sentra-info .deco04 {
-        left: -100px;
-        top: 35%;
-        width: 184px;
-        rotate: -30deg;
-    }
-    .sentra-info .deco02 {
-        width: 133px;
-        right: -40px;
-        top: 20px;
-    }
-    .sentra-info .deco05 {
-        bottom: -40px;
-        right: 4%;
-        width: 196px;
-    }
+    /* --- SENTRA --- */
+    .sentra-info .deco04 { left: -100px; top: 35%; width: 184px; rotate: -30deg; }
+    .sentra-info .deco02 { width: 133px; right: -40px; top: 20px; }
+    .sentra-info .deco05 { bottom: -40px; right: 4%; width: 196px; }
 
+    /* --- KICKS / SENTRA Swiper Navigation --- */
     .KICKS .swiper-button-next,
     .KICKS .swiper-button-prev,
     .KICKS .swiper-button-next::after,
@@ -1789,91 +1493,59 @@ position: absolute;
     .SENTRA .swiper-button-next,
     .SENTRA .swiper-button-prev,
     .SENTRA .swiper-button-next::after,
-    .SENTRA .swiper-button-prev::after{
-        width: 30px;
-        height: 30px;
-    }
-    
+    .SENTRA .swiper-button-prev::after { width: 30px; height: 30px; }
     .KICKS .swiper-button-prev,
-    .SENTRA .swiper-button-prev{
-      top: 70%;
-      left:3%;
-    }
+    .SENTRA .swiper-button-prev { top: 70%; left: 3%; }
     .KICKS .swiper-button-next,
-    .SENTRA .swiper-button-next{
-      top: 70%;
-      right:3%
-    }
+    .SENTRA .swiper-button-next { top: 70%; right: 3%; }
 
-    .car-slide-box .car-info-box .car-feature-title {
-        font-size: 18px;
-    }
-    .car-slide-box .car-info-box .car-feature-title.over-size {
-        margin: 15px 0px 15px 0px;
-    }
+    /* --- Car Slide --- */
+    .car-slide-box .car-info-box .car-feature-title { font-size: 18px; }
+    .car-slide-box .car-info-box .car-feature-title.over-size { margin: 15px 0; }
     .car-slide-box .car-info-box .car-feature-directions {
         font-size: 16px;
         width: 75%;
     }
-    .car-slide-box .car-info-box .car-feature-directions.over-size{
+    .car-slide-box .car-info-box .car-feature-directions.over-size {
         width: 85%;
         margin-bottom: 25px;
     }
-
-    .car-slide-box .car-info-box .car-feature-directions ul{
+    .car-slide-box .car-info-box .car-feature-directions ul {
         white-space: nowrap;
         padding-left: 20px;
     }
-    .car-slide-box .car-info-box .car-feature-directions.over-size ul{
+    .car-slide-box .car-info-box .car-feature-directions.over-size ul {
         padding-left: 0;
         font-size: 12px;
         white-space: normal;
     }
-    .car-slide-box .car-info-box .car-feature-directions.over-size ul li{
-        letter-spacing: 0px;
-    }
-
+    .car-slide-box .car-info-box .car-feature-directions.over-size ul li { letter-spacing: 0; }
     .car-slide-box .car-img-box {
         width: 75%;
         height: auto;
         position: relative;
         margin-bottom: 80px;
     }
-
-    .kicks-info .kicks-next-btn{
-        width: 50%;
-    }
-    .sentra-info .sentra-previous-btn{
-        width: 50%;
-    }
-
-    .SENTRA .car-slide-box .car-info-box{
-      width: 100%;
-      margin-bottom: 20px;
-      margin-top: 0px;
-      margin-left: 0px;
+    .kicks-info .kicks-next-btn { width: 50%; }
+    .sentra-info .sentra-previous-btn { width: 50%; }
+    .SENTRA .car-slide-box .car-info-box {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 0;
+        margin-left: 0;
     }
 
+    /* --- Price --- */
+    .price-info .price-box img {
+        width: 235px;
+        height: auto;
+        margin: auto;
+    }
+    .price-info .item-colum { flex-direction: column; }
 
-    .price-info .price-box img{
-      width: 235px;
-      height: auto;
-      margin: auto;
-    }
-
-    .price-info .item-colum{
-      flex-direction: column;
-    }
-
-    .mob-menu-btn {
-        width: 45px;
-        height: 45px;
-    }
-    .go-to-top-btn {
-        width: 45px;
-        height: 45px;
-    }.popup-close {    width: 45px;
-        height: 45px;
-    }
+    /* --- Utility Buttons --- */
+    .mob-menu-btn  { width: 45px; height: 45px; }
+    .go-to-top-btn { width: 45px; height: 45px; }
+    .popup-close   { width: 45px; height: 45px; }
 
 }

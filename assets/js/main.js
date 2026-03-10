@@ -1,14 +1,19 @@
+const triggeredSlides = new Set();
+const wheelThreshold = 150;
+const cooldownTime = 650;
 const mobileWindowWidth = 1180;
+const fadeInCooldowns = new Map();
+const fadeInCooldownTime = 3000;
+
 let verticalSwiper = null;
-let wheelAccumulator = 0;
 let isSwiping = false;
 let isDesktop = window.innerWidth >= mobileWindowWidth;
 let isLandscape = window.matchMedia('(orientation: landscape)').matches;
-const wheelThreshold = 150;
-const cooldownTime = 650;
-
-
-console.log(isLandscape);
+let resizeTimer = null;
+let wheelTimer = null;
+let wheelAccumulator = 0;
+let mobileCurrentSlideIndex = -1;
+let mobileLastScrollTop = 0;
 
 // =============================================
 // Handler Functions
@@ -17,14 +22,11 @@ console.log(isLandscape);
 function handleLandscapeChange() {
   window.matchMedia('(orientation: landscape)').addEventListener('change', (e) => {
     isLandscape = e.matches;
-
     if(isLandscape){
       document.body.classList.add('landscape');
     } else {
       document.body.classList.remove('landscape');
     }
-
-    console.log('Orientation changed. Is landscape:', isLandscape);
   });
 }
 
@@ -69,10 +71,6 @@ function handleGoToTopClick() {
   }
 }
 
-let mobileCurrentSlideIndex = -1;
-let mobileLastScrollTop = 0;
-const triggeredSlides = new Set();
-
 function handleMobilePanelScroll() {
   const panelEl = document.querySelector('.swiper-wrapper-v');
   const headerEl = document.querySelector('header');
@@ -92,15 +90,11 @@ function handleMobilePanelScroll() {
     
     slides.forEach((slide, i) => {
       const slideTop = slide.offsetTop - scrollTop;
-      const slideRatio = slideTop / panelHeight;
-      
-      // console.log(`Slide ${i}: slideTop=${slideTop}, slideRatio=${slideRatio.toFixed(2)}, scrollingDown=${scrollingDown}`);
-
+      const slideRatio = slideTop / panelHeight;      
       if (scrollingDown) {
         if (slideRatio >= 0.9 && slideRatio <= 1.0){
           triggerFadeInElements(slides[i]);
         };
-
       } else {
         if (slideRatio >= 0.0 && slideRatio <= 0.1){        
           triggerFadeInElements(slides[i-1]);
@@ -224,9 +218,20 @@ document.addEventListener('DOMContentLoaded', () => {
   handleLandscapeChange();
 
   document.querySelectorAll('.swiper-h').forEach((swiperEl) => {
-    const isKicksOrSentra = swiperEl.classList.contains('KICKS') || swiperEl.classList.contains('SENTRA');
+    const isKicks  = swiperEl.classList.contains('KICKS');
+    const isSentra = swiperEl.classList.contains('SENTRA');
+    const isKicksOrSentra = isKicks || isSentra;
     const paginationSetting = isKicksOrSentra
-      ? { el: swiperEl.querySelector('.swiper-pagination'), clickable: true, renderBullet: (index, className) => `<span class="${className} custom-bullet">${index + 1}</span>` }
+      ? {
+          el: swiperEl.querySelector('.swiper-pagination'),
+          clickable: true,
+          renderBullet: (index, className) => {
+            const trackingClass = isSentra
+              ? `US_N_202603_brand_sp_usp2_${index + 1}`
+              : `US_N_202603_brand_sp_usp1_${index + 1}`;
+            return `<span class="${className} custom-bullet ${trackingClass}">${index + 1}</span>`;
+          },
+        }
       : { el: swiperEl.querySelector('.swiper-pagination'), clickable: true };
 
     new Swiper(swiperEl, {
@@ -304,7 +309,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Resize
 // =============================================
 
-let resizeTimer = null;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
@@ -327,7 +331,6 @@ window.addEventListener('resize', () => {
 // Wheel / Swipe
 // =============================================
 
-let wheelTimer = null;
 document.addEventListener('wheel', (e) => {
   if (!isDesktop) return;
   handleWheel(e);
@@ -365,14 +368,11 @@ function performSwipe(direction) {
 // Fade In
 // =============================================
 
-const fadeInCooldowns = new Map();
-const fadeInCooldownTime = 3000;
 
 function triggerFadeInElements(slideEl) {
   const targetSlide = slideEl || (verticalSwiper ? verticalSwiper.slides[verticalSwiper.activeIndex] : null);
   if (!targetSlide) return;
 
-  // 冷卻時間防重複觸發
   if (fadeInCooldowns.has(targetSlide)) return;
   fadeInCooldowns.set(targetSlide, true);
   setTimeout(() => fadeInCooldowns.delete(targetSlide), fadeInCooldownTime);
