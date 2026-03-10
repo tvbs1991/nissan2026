@@ -35,6 +35,15 @@ body {
   cursor: url('../img/sakura/cursor_sakura.svg') 16 16, auto;
 }
 
+a,
+button,
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
 img {
   display: block;
   width: 100%;
