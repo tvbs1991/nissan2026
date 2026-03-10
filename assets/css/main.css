@@ -816,13 +816,13 @@ header .mob-menu {
 
 .car-slide-box .car-info-box .car-feature-title {
     font-size: 32px;
+    font-weight: bold;
     padding: 5px 30px;
     background: #FFFFFF;
     box-shadow: 0px 0px 25px 0px #0000000D;
     margin: 40px 0 15px;
     letter-spacing: 30%;
     color: #616161;
-    font-family: "Noto Serif TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 
 .car-slide-box .car-info-box .car-feature-directions {
@@ -1518,6 +1518,9 @@ header .mob-menu {
         padding-left: 0;
         font-size: 12px;
         white-space: normal;
+    }
+    .car-slide-box .car-info-box .car-feature-directions.over-size ul.sentra-06{
+        padding-left: 40px;
     }
     .car-slide-box .car-info-box .car-feature-directions.over-size ul li { letter-spacing: 0; }
     .car-slide-box .car-img-box {
