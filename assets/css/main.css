@@ -582,9 +582,9 @@ header .mob-menu {
     width: 500px;
     height: 300px;
     overflow: hidden;
-    background-image: url(../img/banner/banner01_pc.jpg);
-    background-position: 35% 50%;
-    background-size: 200%;
+    background-image: url('../img/tvc/YT sakura 2.png');
+    background-position: center;
+    background-size: 100%;
 }
 
 .tvc-info .tvc-kicks-img:hover {
@@ -604,9 +604,9 @@ header .mob-menu {
     width: 500px;
     height: 300px;
     overflow: hidden;
-    background-image: url(../img/banner/banner02_pc.jpg);
-    background-position: 80% 60%;
-    background-size: 200%;
+    background-image: url('../img/tvc/YT sakura 1.png');
+    background-position: center;
+    background-size: 100%;
 }
 
 .tvc-info .tvc-sentra-img:hover {
@@ -1452,8 +1452,8 @@ header .mob-menu {
         width: 300px;
         height: 178px;
         overflow: hidden;
-        background-image: url(../img/banner/banner01_m.jpg);
-        background-position: center 60%;
+        background-image: url('../img/tvc/YT sakura 2.png');
+        background-position: center;
         background-size: 100%;
     }
     .tvc-info .tvc-sentra-img {
@@ -1464,8 +1464,8 @@ header .mob-menu {
         width: 300px;
         height: 178px;
         overflow: hidden;
-        background-image: url(../img/banner/banner02_m.jpg);
-        background-position: center 70%;
+        background-image: url('../img/tvc/YT sakura 1.png');
+        background-position: center;
         background-size: 100%;
     }
     .tvc-info .play-box .play-btn {

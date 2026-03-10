@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const videoUrl = btn.dataset.video_url || 'https://www.youtube.com/';
+      const videoUrl = btn.dataset.video_url || 'https://www.youtube.com/embed/fu7wIkQ95_M?autoplay=1&mute=1';
       popupVideo.src = videoUrl;
       popupOverlay.classList.add('show');
       popupOverlay.classList.remove('hide');
