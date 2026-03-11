@@ -1,7 +1,7 @@
 const triggeredSlides = new Set();
 const wheelThreshold = 150;
 const cooldownTime = 650;
-const mobileWindowWidth = 1180;
+const mobileWindowWidth = 1200;
 const fadeInCooldowns = new Map();
 const fadeInCooldownTime = 3000;
 
@@ -319,6 +319,8 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(() => {
     const wasDesktop = isDesktop;
     isDesktop = window.innerWidth >= mobileWindowWidth;
+    isLandscape = window.matchMedia('(orientation: landscape)').matches;
+
 
     if (isDesktop && !wasDesktop) {
       unbindMobileScroll();

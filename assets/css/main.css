@@ -413,7 +413,7 @@ header .mob-menu {
 .banner-info .BANNER .swiper-slide:first-child .banner-tag,
 .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
     width: auto;
-    height: 4vw;
+    height: 7vw;
 }
 
 
@@ -582,9 +582,9 @@ header .mob-menu {
     width: 500px;
     height: 300px;
     overflow: hidden;
-    background-image: url('../img/tvc/YT sakura 2.png');
+    background-image: url('../img/tvc/YT sakura 2.jpg');
+    background-size: cover;
     background-position: center;
-    background-size: 100%;
 }
 
 .tvc-info .tvc-kicks-img:hover {
@@ -604,9 +604,9 @@ header .mob-menu {
     width: 500px;
     height: 300px;
     overflow: hidden;
-    background-image: url('../img/tvc/YT sakura 1.png');
+    background-image: url('../img/tvc/YT sakura 1.jpg');
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .tvc-info .tvc-sentra-img:hover {
@@ -614,39 +614,43 @@ header .mob-menu {
 }
 
 .tvc-info .play-box {
-    position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
 }
 
 .tvc-info .play-box .play-btn {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     color: #717171;
     cursor: pointer;
     background: #fffffffc;
     border-radius: 50%;
-    box-shadow: 0 0 0 12px #FFFFFF80;
+    box-shadow: 0 0 0 6px #FFFFFF80;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 4px;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: absolute;
+    bottom: 20%;
+    left: 15%;
+}
+.tvc-info .tvc-info-column:nth-of-type(2) .play-box .play-btn {
+    left: unset;
+    right: 15%;
 }
 
 .tvc-info .play-box:hover .play-btn {
     transform: scale(1.2);
-    box-shadow: 0 0 0 14px #FFFFFF90;
+    box-shadow: 0 0 0 8px #FFFFFF90;
 }
 
 .tvc-info .play-btn img {
-    width: 18px;
+    width: 14px;
     height: auto;
     filter: invert(54%) sepia(1%) saturate(234%) hue-rotate(189deg) brightness(95%) contrast(92%);
 }
@@ -1221,9 +1225,9 @@ header .mob-menu {
 
 
 /* ======================================================
-   平板版 (Tablet)：768px - 1179px
+   平板版 (Tablet)：768px - 1199px
    ====================================================== */
-@media screen and (max-width: 1179px) {
+@media screen and (max-width: 1199px) {
 
     /* --- Swiper --- */
     .swiper-v .swiper-wrapper-v { overflow-y: auto; }
@@ -1237,7 +1241,11 @@ header .mob-menu {
     }
     .banner-info .BANNER .swiper-slide:first-child .banner-tag,
     .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
-        height: 5vh;
+        height: 8vh;
+    }
+    .landscape .banner-info .BANNER .swiper-slide:first-child .banner-tag,
+    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag {
+        height: 10vh;
     }
     .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
     .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
@@ -1246,17 +1254,15 @@ header .mob-menu {
         left: 0;
         width: 200px;
     }
-    .landscape .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
-    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
-        position: absolute;
-        color: #FFFFFF;
-        transform: translateY(-50%);
+    .landscape .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content {
         top: 70%;
         right: 0;
         left: 60%;
-        margin: 0 auto;
-        width: 17vw;
-        text-align: center;
+    }
+    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
+        top: 70%;
+        right: 0;
+        left: -32%;
     }
 
     /* --- TVC --- */
@@ -1318,9 +1324,15 @@ header .mob-menu {
         top: 70%;
     }
     .KICKS .swiper-button-next,
-    .SENTRA .swiper-button-next { right: 10%; }
+    .SENTRA .swiper-button-next { right: 8%; }
     .KICKS .swiper-button-prev,
-    .SENTRA .swiper-button-prev { left: 10%; }
+    .SENTRA .swiper-button-prev { left: 8%; }
+
+    .landscape .KICKS .swiper-button-next,
+    .landscape .SENTRA .swiper-button-next { right: 10%; }
+    .landscape .KICKS .swiper-button-prev,
+    .landscape .SENTRA .swiper-button-prev { left: 10%; }
+
     .KICKS .swiper-button-next::after,
     .KICKS .swiper-button-prev::after,
     .SENTRA .swiper-button-next::after,
@@ -1413,6 +1425,8 @@ header .mob-menu {
     .banner-info .deco { width: 18px; }
     .banner-info .banner-box .banner-pc { display: none; }
     .banner-info .banner-box .banner-m  { display: block; }
+    .landscape .banner-info .banner-box .banner-pc { display: block; }
+    .landscape .banner-info .banner-box .banner-m  { display: none; }
     .banner-info .BANNER .swiper-slide:first-child .banner-tag,
     .banner-info .BANNER .swiper-slide:nth-child(2) .banner-tag { height: 30px; }
     .banner-info .banner-box .banner-tag {
@@ -1428,6 +1442,15 @@ header .mob-menu {
         max-width: 290px;
     }
     .banner-info .banner-box .banner-content a { font-size: 16px; }
+    .landscape .banner-info .BANNER .swiper-slide:first-child .banner-box .banner-content,
+    .landscape .banner-info .BANNER .swiper-slide:nth-child(2) .banner-box .banner-content {
+        width: 22vw;
+    }
+    .landscape .banner-info .banner-box .banner-content a { 
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
 
     /* --- Popup --- */
     .popup-overlay .popup-close {
@@ -1469,11 +1492,13 @@ header .mob-menu {
         background-size: 100%;
     }
     .tvc-info .play-box .play-btn {
-        width: 40px;
-        height: 40px;
-        box-shadow: 0 0 0 5px #FFFFFF80;
+        width: 25px;
+        height: 25px;
+        box-shadow: 0 0 0 3px #FFFFFF80;
     }
-    .tvc-info .play-btn img { width: 11px; }
+    .tvc-info .play-btn img {
+        width: 9px;
+    }
 
     /* --- KICKS --- */
     .KICKS .car-slide-box .car-info-box {
